@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ganesh Kumar P | Solutions Architect · AWS · GenAI · Databricks · Snowflake</title>
+  <meta name="description" content="Ganesh Kumar P — Solutions Architect specializing in AWS, Snowflake, Databricks, and Generative AI enterprise data platforms."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <div class="nav-brand">
+    <span class="brand-bracket">[</span><span class="brand-g">G</span><span class="brand-k">K</span><span class="brand-bracket">]</span>
+    <span class="brand-sub">GEODE<span class="c-cyan">LAB</span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"><span class="n">01</span>About</a></li>
+    <li><a href="#experience"><span class="n">02</span>Experience</a></li>
+    <li><a href="#skills"><span class="n">03</span>Skills</a></li>
+    <li><a href="#certifications"><span class="n">04</span>Certifications</a></li>
+    <li><a href="#projects"><span class="n">05</span>Projects</a></li>
+    <li><a href="#speaking"><span class="n">06</span>Speaking</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="dot-pulse"></span>Available for Architecture Consulting</div>
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1 class="hero-name">
+      <span class="name-first">Ganesh</span>
+      <span class="name-last">Kumar P</span>
+    </h1>
+    <div class="hero-title-row">
+      <span class="title-prefix">//</span>
+      <span id="typewriter" class="typewriter-text"></span>
+      <span class="type-cursor">▮</span>
+    </div>
+    <p class="hero-bio">
+      Designing enterprise intelligence at the intersection of
+      <span class="hl-aws">AWS Cloud</span>,
+      <span class="hl-snow">Snowflake</span>,
+      <span class="hl-db">Databricks</span> &amp;
+      <span class="hl-ai">Generative AI</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#experience" class="btn-glow">View My Work <span>→</span></a>
+      <a href="https://linkedin.com/in/ganesh-kumar-ponraj" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+      <a href="https://github.com/geodelab" target="_blank" class="btn-ghost">GitHub ↗</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric"><span class="metric-val" data-target="6">0</span>+<span class="metric-lbl">Years Exp</span></div>
+      <div class="metric-sep"></div>
+      <div class="metric"><span class="metric-val" data-target="50">0</span>+<span class="metric-lbl">Clients</span></div>
+      <div class="metric-sep"></div>
+      <div class="metric"><span class="metric-val" data-target="3">0</span><span class="metric-lbl">Cloud Certs</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="arch-diagram">
+      <div class="arch-title">// enterprise data flow</div>
+      <div class="arch-layers">
+        <div class="arch-layer">
+          <div class="arch-node node-aws">☁️ AWS</div>
+          <div class="arch-node node-s3">S3 Lake</div>
+          <div class="arch-node node-lam">λ Lambda</div>
+        </div>
+        <div class="arch-arrow-row"><div class="arch-arr">▼ ingest &amp; stage</div></div>
+        <div class="arch-layer">
+          <div class="arch-node node-db">⚡ Databricks</div>
+          <div class="arch-node node-spk">Apache Spark</div>
+        </div>
+        <div class="arch-arrow-row"><div class="arch-arr">▼ transform (dbt)</div></div>
+        <div class="arch-layer">
+          <div class="arch-node node-snow">❄️ Snowflake</div>
+          <div class="arch-node node-dbt">dbt Core</div>
+        </div>
+        <div class="arch-arrow-row"><div class="arch-arr">▼ serve &amp; activate</div></div>
+        <div class="arch-layer">
+          <div class="arch-node node-ai">🤖 GenAI / RAG</div>
+          <div class="arch-node node-viz">📊 Analytics</div>
+        </div>
+      </div>
+      <div class="arch-status"><span class="status-dot"></span> Architecture online</div>
+    </div>
+  </div>
+
+  <a href="#about" class="hero-scroll"><span>scroll</span><div class="scroll-bar"></div></a>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-label"><span class="c-cyan">01.</span> About Me</div>
+    <div class="about-wrap">
+      <div class="about-text">
+        <h2 class="sec-title">Building Data <span class="grad-text">Intelligence</span><br>at Enterprise Scale</h2>
+        <p>I'm <strong>Ganesh Kumar P</strong>, a Solutions Architect at <strong>Zeb Consulting</strong> — designing high-performance cloud data platforms and AI-driven architectures for enterprise organisations.</p>
+        <p>My work sits at the intersection of <span class="hl-aws">cloud infrastructure</span>, <span class="hl-snow">modern data platforms</span>, and <span class="hl-ai">Generative AI</span>. I help organisations transform raw, siloed data into intelligent, scalable business systems.</p>
+        <p>From architecting multi-petabyte data lakehouses to deploying production RAG systems — I bring end-to-end ownership from whiteboard to cloud deployment.</p>
+        <div class="about-chips">
+          <span class="chip">☁️ Cloud Architecture</span>
+          <span class="chip">🏗️ Data Lakehouse</span>
+          <span class="chip">🤖 GenAI / RAG</span>
+          <span class="chip">❄️ Snowflake</span>
+          <span class="chip">⚡ Databricks</span>
+          <span class="chip">🌐 AWS Native</span>
+          <span class="chip">🔄 Data Modernization</span>
+          <span class="chip">🎤 Tech Speaker</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="avatar-orbit">
+          <div class="orbit-ring r1"></div>
+          <div class="orbit-ring r2"></div>
+          <div class="orbit-ring r3"></div>
+          <div class="avatar-core"><span>GK</span></div>
+          <div class="orbit-icon oi-1">AWS</div>
+          <div class="orbit-icon oi-2">❄️</div>
+          <div class="orbit-icon oi-3">⚡</div>
+          <div class="orbit-icon oi-4">🤖</div>
+        </div>
+        <div class="about-company">
+          <div class="company-label">Currently at</div>
+          <div class="company-name">Zeb Consulting</div>
+          <div class="company-role">Solutions Architect</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-label"><span class="c-cyan">02.</span> Experience</div>
+    <h2 class="sec-title">Where I've <span class="grad-text">Architected</span></h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-dot active"></div><div class="tl-line"></div></div>
+        <div class="tl-card tl-featured">
+          <div class="tl-top">
+            <div>
+              <div class="tl-badge">● Current Role</div>
+              <h3 class="tl-role">Solutions Architect</h3>
+              <div class="tl-org"><span class="org-logo org-zeb">ZC</span>Zeb Consulting · Full-time</div>
+            </div>
+            <div class="tl-period">2022 – Present</div>
+          </div>
+          <ul class="tl-pts">
+            <li>Designed enterprise cloud data architectures leveraging <span class="hl-aws">AWS</span> — Glue, Redshift, Lambda, S3 — for large-scale analytics workloads</li>
+            <li>Implemented scalable <span class="hl-snow">data lakehouse solutions</span> with Snowflake and Databricks, reducing query latency by up to <strong>70%</strong></li>
+            <li>Led architecture modernisation reviews for data platforms handling <strong>petabyte-scale</strong> datasets across enterprise clients</li>
+            <li>Delivered <span class="hl-ai">GenAI integration</span> solutions — RAG pipelines, vector search, and LLM-powered analytics layers</li>
+            <li>Worked directly with enterprise clients to translate business requirements into scalable technical architectures</li>
+          </ul>
+          <div class="tl-stack"><span>AWS</span><span>Snowflake</span><span>Databricks</span><span>Python</span><span>Spark</span><span>dbt</span><span>Terraform</span><span>GenAI</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-top">
+            <div>
+              <h3 class="tl-role">Data &amp; Analytics Engineer</h3>
+              <div class="tl-org"><span class="org-logo org-prev">DE</span>Analytics Role · Full-time</div>
+            </div>
+            <div class="tl-period">2019 – 2022</div>
+          </div>
+          <ul class="tl-pts">
+            <li>Designed and implemented <span class="hl-snow">data pipelines and ETL/ELT architectures</span> for analytics-ready data products</li>
+            <li>Built scalable analytics platforms using the modern data stack — dbt, Airflow, and cloud warehouses</li>
+            <li>Deployed cloud data infrastructure with high-availability guarantees across multi-region setups</li>
+            <li>Delivered data solutions supporting ML pipelines, reporting, and real-time analytics use cases</li>
+          </ul>
+          <div class="tl-stack"><span>Python</span><span>SQL</span><span>dbt</span><span>Airflow</span><span>AWS</span><span>Spark</span><span>Docker</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-dot"></div></div>
+        <div class="tl-card">
+          <div class="tl-top">
+            <div>
+              <h3 class="tl-role">GIS Developer &amp; Founder</h3>
+              <div class="tl-org"><span class="org-logo org-geo">GK</span>GeoDE Lab · Independent</div>
+            </div>
+            <div class="tl-period">2019</div>
+          </div>
+          <ul class="tl-pts">
+            <li>Founded GeoDE Lab and launched <strong>dynamo-damm-boy</strong> — the original geospatial web platform that started this journey</li>
+            <li>Built interactive mapping interfaces using Leaflet.js and Mapbox GL, deployed on GitHub Pages</li>
+            <li>Developed Python automation scripts for raster/vector geospatial data processing workflows</li>
+          </ul>
+          <div class="tl-stack"><span>Leaflet.js</span><span>Python</span><span>QGIS</span><span>GeoJSON</span><span>GitHub Pages</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-label"><span class="c-cyan">03.</span> Skills</div>
+    <h2 class="sec-title">My <span class="grad-text">Tech Arsenal</span></h2>
+
+    <div class="skills-domains">
+      <div class="domain-card">
+        <div class="domain-icon">☁️</div>
+        <h3>Cloud Architecture</h3>
+        <div class="domain-bars">
+          <div class="dbar"><span>AWS (Glue, Redshift, Lambda, S3)</span><div class="bar-track"><div class="bar-fill" data-w="95"></div></div><em>95%</em></div>
+          <div class="dbar"><span>Serverless Architecture</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><em>88%</em></div>
+          <div class="dbar"><span>Cloud Native Design</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div><em>90%</em></div>
+          <div class="dbar"><span>Infrastructure as Code (Terraform)</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div><em>82%</em></div>
+        </div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🏗️</div>
+        <h3>Data Platforms</h3>
+        <div class="domain-bars">
+          <div class="dbar"><span>Snowflake</span><div class="bar-track"><div class="bar-fill" data-w="93"></div></div><em>93%</em></div>
+          <div class="dbar"><span>Databricks / Apache Spark</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div><em>90%</em></div>
+          <div class="dbar"><span>Lakehouse Architecture</span><div class="bar-track"><div class="bar-fill" data-w="92"></div></div><em>92%</em></div>
+          <div class="dbar"><span>dbt (Data Build Tool)</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div><em>85%</em></div>
+        </div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🤖</div>
+        <h3>AI &amp; GenAI</h3>
+        <div class="domain-bars">
+          <div class="dbar"><span>LLM Applications</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div><em>85%</em></div>
+          <div class="dbar"><span>RAG (Retrieval Augmented Gen)</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><em>88%</em></div>
+          <div class="dbar"><span>Vector Databases</span><div class="bar-track"><div class="bar-fill" data-w="80"></div></div><em>80%</em></div>
+          <div class="dbar"><span>AI Solution Architecture</span><div class="bar-track"><div class="bar-fill" data-w="87"></div></div><em>87%</em></div>
+        </div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">⚙️</div>
+        <h3>Data Engineering</h3>
+        <div class="domain-bars">
+          <div class="dbar"><span>Python</span><div class="bar-track"><div class="bar-fill" data-w="92"></div></div><em>92%</em></div>
+          <div class="dbar"><span>SQL / Advanced Analytics</span><div class="bar-track"><div class="bar-fill" data-w="95"></div></div><em>95%</em></div>
+          <div class="dbar"><span>ETL / ELT Pipelines</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div><em>90%</em></div>
+          <div class="dbar"><span>Apache Airflow</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div><em>82%</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-item" style="--c:#ff9900"><div class="si-logo">AWS</div><div class="si-name">Amazon Web Services</div></div>
+      <div class="stack-item" style="--c:#29b5e8"><div class="si-logo">❄️</div><div class="si-name">Snowflake</div></div>
+      <div class="stack-item" style="--c:#ff3621"><div class="si-logo">⚡</div><div class="si-name">Databricks</div></div>
+      <div class="stack-item" style="--c:#e4532a"><div class="si-logo">🔥</div><div class="si-name">Apache Spark</div></div>
+      <div class="stack-item" style="--c:#ff8c00"><div class="si-logo">dbt</div><div class="si-name">dbt Core</div></div>
+      <div class="stack-item" style="--c:#3776ab"><div class="si-logo">Py</div><div class="si-name">Python</div></div>
+      <div class="stack-item" style="--c:#00f5ff"><div class="si-logo">SQL</div><div class="si-name">Advanced SQL</div></div>
+      <div class="stack-item" style="--c:#8338ec"><div class="si-logo">RAG</div><div class="si-name">RAG / LLMs</div></div>
+      <div class="stack-item" style="--c:#7b42bc"><div class="si-logo">IaC</div><div class="si-name">Terraform</div></div>
+      <div class="stack-item" style="--c:#2496ed"><div class="si-logo">🐳</div><div class="si-name">Docker</div></div>
+      <div class="stack-item" style="--c:#f05032"><div class="si-logo">Git</div><div class="si-name">Git / CI/CD</div></div>
+      <div class="stack-item" style="--c:#017cee"><div class="si-logo">🌀</div><div class="si-name">Apache Airflow</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section id="certifications">
+  <div class="container">
+    <div class="sec-label"><span class="c-cyan">04.</span> Certifications</div>
+    <h2 class="sec-title">Verified <span class="grad-text">Expertise</span></h2>
+    <div class="certs-showcase">
+
+      <div class="cert-main">
+        <div class="cert-glow"></div>
+        <div class="cert-ribbon">⭐ PRIMARY</div>
+        <div class="cert-brand" style="color:#ff9900">AWS</div>
+        <div class="cert-issuer-name">Amazon Web Services</div>
+        <h3 class="cert-title">AWS Certified Solutions Architect</h3>
+        <p class="cert-desc">Validates expertise in designing distributed systems and architecting solutions on AWS — covering security, reliability, performance, cost optimisation, and operational excellence.</p>
+        <div class="cert-footer">
+          <span class="cert-verify">✓ VERIFIED</span>
+          <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank" class="cert-link">View Credential ↗</a>
+        </div>
+      </div>
+
+      <div class="certs-secondary">
+        <div class="cert-card-sm" style="--ac:#29b5e8">
+          <div class="ccs-header"><div class="ccs-logo">❄️</div><div class="ccs-verify">✓</div></div>
+          <div class="ccs-issuer">Snowflake</div>
+          <div class="ccs-name">SnowPro Core Certification</div>
+          <div class="ccs-desc">Data warehousing, virtual warehouses, Snowpark, data sharing, Time Travel, and query optimisation on the Snowflake cloud data platform.</div>
+          <a href="https://www.snowflake.com/certifications/" target="_blank" class="ccs-link">View ↗</a>
+        </div>
+
+        <div class="cert-card-sm" style="--ac:#ff3621">
+          <div class="ccs-header"><div class="ccs-logo">⚡</div><div class="ccs-verify">✓</div></div>
+          <div class="ccs-issuer">Databricks</div>
+          <div class="ccs-name">Databricks Certified Associate</div>
+          <div class="ccs-desc">Apache Spark fundamentals, Delta Lake, MLflow integration, and building production-ready data pipelines on the Databricks Lakehouse Platform.</div>
+          <a href="https://www.databricks.com/learn/certification" target="_blank" class="ccs-link">View ↗</a>
+        </div>
+
+        <div class="cert-card-sm" style="--ac:#8338ec">
+          <div class="ccs-header"><div class="ccs-logo">🤖</div><div class="ccs-verify">🔄</div></div>
+          <div class="ccs-issuer">In Progress</div>
+          <div class="ccs-name">AWS Certified AI Practitioner</div>
+          <div class="ccs-desc">Generative AI, LLMs, Bedrock, SageMaker, and responsible AI practices on AWS for enterprise-scale intelligent applications.</div>
+          <div class="ccs-wip">🔄 Currently Pursuing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-label"><span class="c-cyan">05.</span> Projects</div>
+    <h2 class="sec-title">Things I've <span class="grad-text">Built &amp; Shipped</span></h2>
+    <div class="projects-mosaic">
+
+      <div class="proj-hero-card">
+        <div class="phc-glow"></div>
+        <div class="phc-top">
+          <span class="phc-icon">🏗️</span>
+          <div class="phc-links">
+            <a href="https://github.com/geodelab" target="_blank">GitHub ↗</a>
+            <a href="#" target="_blank">Case Study ↗</a>
+          </div>
+        </div>
+        <div class="phc-tag">Enterprise Architecture · Featured</div>
+        <h3>Multi-Cloud Data Lakehouse Platform</h3>
+        <p>End-to-end enterprise data lakehouse architecture on AWS with Snowflake as the serving layer and Databricks handling heavy Spark transformations. Ingests 500GB+ daily from 30+ sources with a 99.9% uptime SLA and full observability via OpenTelemetry.</p>
+        <div class="phc-metrics">
+          <div class="phc-m"><span>500GB+</span>Daily Ingestion</div>
+          <div class="phc-m"><span>70%</span>Faster Queries</div>
+          <div class="phc-m"><span>99.9%</span>Uptime SLA</div>
+          <div class="phc-m"><span>35%</span>Cost Reduction</div>
+        </div>
+        <div class="phc-stack"><span>AWS</span><span>Snowflake</span><span>Databricks</span><span>dbt</span><span>Airflow</span><span>Terraform</span></div>
+      </div>
+
+      <div class="proj-grid">
+        <div class="proj-sm-card">
+          <div class="psc-icon">🤖</div>
+          <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
+          <div class="psc-tag">GenAI</div>
+          <h4>Enterprise RAG System</h4>
+          <p>Production RAG pipeline on AWS Bedrock + Pinecone vector DB for querying corporate knowledge bases via natural language. Deployed for 1000+ enterprise users.</p>
+          <div class="psc-stack"><span>AWS Bedrock</span><span>Pinecone</span><span>LangChain</span><span>Python</span></div>
+        </div>
+
+        <div class="proj-sm-card">
+          <div class="psc-icon">❄️</div>
+          <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
+          <div class="psc-tag">Data Platform</div>
+          <h4>Snowflake Analytics Hub</h4>
+          <p>Modern analytics platform with Snowflake data sharing, dbt transformation layers, and automated cost governance — reducing spend by 35%.</p>
+          <div class="psc-stack"><span>Snowflake</span><span>dbt</span><span>Python</span><span>Grafana</span></div>
+        </div>
+
+        <div class="proj-sm-card">
+          <div class="psc-icon">⚡</div>
+          <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
+          <div class="psc-tag">Databricks</div>
+          <h4>Real-Time Spark Pipeline</h4>
+          <p>Structured Streaming pipeline on Databricks processing 1M+ events/hour from Kafka with Delta Lake for ACID-compliant real-time analytics.</p>
+          <div class="psc-stack"><span>Databricks</span><span>Delta Lake</span><span>Kafka</span><span>Spark</span></div>
+        </div>
+
+        <div class="proj-sm-card origin-card">
+          <div class="psc-icon">🌐</div>
+          <div class="psc-links"><a href="https://github.com/geodelab/dynamo-damm-boy.github.io" target="_blank">↗</a></div>
+          <div class="psc-tag">Origin · 2019</div>
+          <h4>GeoDE Lab — Dynamo Damm Boy</h4>
+          <p>The original 2019 geospatial web platform that started it all. Interactive Leaflet.js mapping, GeoJSON layers, deployed on GitHub Pages.</p>
+          <div class="psc-stack"><span>Leaflet.js</span><span>JavaScript</span><span>GeoJSON</span><span>GitHub Pages</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPEAKING ═══ -->
+<section id="speaking">
+  <div class="container">
+    <div class="sec-label"><span class="c-cyan">06.</span> Speaking &amp; Community</div>
+    <h2 class="sec-title">Sharing <span class="grad-text">Knowledge</span></h2>
+    <div class="speaking-grid">
+      <div class="speak-card speak-featured">
+        <div class="speak-icon">🎤</div>
+        <div class="speak-type">Technical Talk</div>
+        <h3>Generative AI in Enterprise Data Platforms</h3>
+        <p>Deep dive into architecting production-grade GenAI solutions — RAG systems, vector databases, and LLM integration patterns for enterprise scale on AWS.</p>
+        <div class="speak-tags"><span>GenAI</span><span>RAG</span><span>AWS Bedrock</span><span>Enterprise</span></div>
+      </div>
+      <div class="speak-card">
+        <div class="speak-icon">🏗️</div>
+        <div class="speak-type">Workshop</div>
+        <h3>Modern Data Lakehouse Architecture</h3>
+        <p>Hands-on architecture workshop covering lakehouse design patterns with Snowflake and Databricks for enterprise analytics modernisation.</p>
+        <div class="speak-tags"><span>Snowflake</span><span>Databricks</span><span>Lakehouse</span></div>
+      </div>
+      <div class="speak-card">
+        <div class="speak-icon">☁️</div>
+        <div class="speak-type">Community Talk</div>
+        <h3>AWS Data Platform Design Patterns</h3>
+        <p>Architecture discussion on cost-optimised, scalable data platforms on AWS — covering common anti-patterns and proven design approaches for enterprise teams.</p>
+        <div class="speak-tags"><span>AWS</span><span>Data</span><span>Architecture</span><span>Best Practices</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="sec-label"><span class="c-cyan">07.</span> Contact</div>
+      <h2 class="sec-title">Let's Build <span class="grad-text">Something Together</span></h2>
+      <p class="contact-lead">Whether you're looking for a Solutions Architect, want to discuss data platform strategy, or just geek out about GenAI — I'm always open to a great conversation.</p>
+      <div class="contact-cards">
+        <a href="mailto:ganesh@geodelab.com" class="ccard">
+          <div class="ccard-icon">✉️</div>
+          <div><div class="ccard-lbl">Email</div><div class="ccard-val">ganesh@geodelab.com</div></div>
+        </a>
+        <a href="https://linkedin.com/in/ganesh-kumar-ponraj" target="_blank" class="ccard">
+          <div class="ccard-icon">💼</div>
+          <div><div class="ccard-lbl">LinkedIn</div><div class="ccard-val">ganesh-kumar-ponraj</div></div>
+        </a>
+        <a href="https://github.com/geodelab" target="_blank" class="ccard">
+          <div class="ccard-icon">🐙</div>
+          <div><div class="ccard-lbl">GitHub</div><div class="ccard-val">github.com/geodelab</div></div>
+        </a>
+      </div>
+      <a href="mailto:ganesh@geodelab.com" class="btn-glow btn-xl">Say Hello 👋</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">GEODE<span class="c-cyan">LAB</span></div>
+    <p>Designed &amp; Built by <span class="c-cyan">Ganesh Kumar P</span> · 2025</p>
+    <p class="footer-note">Solutions Architect · AWS · Snowflake · Databricks · GenAI</p>
+    <p class="footer-note">Originally <em>dynamo-damm-boy</em> (2019) → Rebuilt 2025</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
