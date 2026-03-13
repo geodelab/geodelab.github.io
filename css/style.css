@@ -729,3 +729,22 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
   .stack-grid { grid-template-columns: repeat(2,1fr); }
   .tl-card { padding: 22px 20px; }
 }
+
+/* ── AVASOFT org logo ── */
+.org-ava { background: rgba(255,107,53,0.12); color: #ff6b35; border: 1px solid rgba(255,107,53,0.3); }
+
+/* ── EDUCATION ── */
+#education { background: var(--bg2); }
+.edu-card {
+  display: flex; gap: 28px; align-items: flex-start;
+  background: rgba(7,12,26,0.95); border: 1px solid var(--border);
+  border-left: 3px solid var(--purple);
+  border-radius: 14px; padding: 36px; max-width: 760px;
+  transition: all 0.3s;
+}
+.edu-card:hover { border-color: rgba(123,47,255,0.4); transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.edu-icon { font-size: 2.8rem; flex-shrink: 0; }
+.edu-degree { font-family: var(--ff-head); font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.edu-school { font-family: var(--ff-mono); font-size: 0.85rem; color: var(--purple); margin-bottom: 4px; }
+.edu-year { font-family: var(--ff-mono); font-size: 0.72rem; color: var(--gray); margin-bottom: 14px; }
+.edu-desc { color: var(--lgray); font-size: 0.88rem; line-height: 1.7; }
