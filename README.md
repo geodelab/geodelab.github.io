@@ -1,67 +1,52 @@
-# 🌐 Ganesh Kumar — GeoDE Lab Portfolio
+# Ganesh Kumar — Portfolio
 
-> Personal portfolio website rebuilt from scratch in 2025 — originally launched as [dynamo-damm-boy](https://github.com/geodelab/dynamo-damm-boy.github.io) in 2019.
+**[geodelab.github.io](https://geodelab.github.io)**
 
-## ✨ Features
-- **Cyberpunk AI/Coder aesthetic** with neon accents, matrix rain, and animated gradients
-- Animated hero with live typewriter effect & rolling code preview
-- Full **Experience timeline** with scroll-triggered animations
-- **Skills section** with animated progress bars + tech pill cloud
-- **Certifications showcase** with issuer-colored cards
-- **Projects grid** with featured project highlight
-- **Education** section
-- Responsive design (mobile-friendly)
-- GitHub Pages ready — zero dependencies, pure HTML/CSS/JS
+---
 
-## 🚀 Deploy to GitHub Pages
+## Who I Am
 
-### Option 1: Direct Push
-```bash
-git clone https://github.com/geodelab/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
-# Copy all files here
-git add .
-git commit -m "🚀 Launch new portfolio"
-git push origin main
-```
-Then go to **Settings → Pages → Source: main branch / root**
+I'm **Ganesh Kumar**, a Solutions Architect based in Chennai, India, specialising in AWS cloud architecture, modern data platforms, and Generative AI solutions.
 
-### Option 2: Create New Repo
-1. Create a new repo named `geodelab.github.io` for the canonical GitHub Pages URL
-2. Upload all files
-3. Enable GitHub Pages
+I currently work at **zeb**, where I design and deliver enterprise-grade data and AI systems — from large-scale cloud migrations and data lakehouse architectures to production GenAI applications on Amazon Bedrock.
 
-## 📝 Customizing Your Data
+With over **5 years of experience** across data engineering and cloud architecture, and **10+ certifications** spanning AWS, Databricks, and Snowflake, I bring both technical depth and business clarity to every solution I build.
 
-Edit `index.html` and replace all `[placeholder]` values:
+---
 
-| Placeholder | Replace With |
-|-------------|-------------|
-| `[Company Name]` | Your actual company names |
-| `[Issue Date]` | Certification dates |
-| `[Credential ID]` | Your cert IDs |
-| `[University Name]` | Your university |
-| `your@email.com` | Your email |
-| `YOUR-LINKEDIN` | Your LinkedIn username |
+## What This Portfolio Is
 
-## 🎨 Customizing Colors
-Edit `css/style.css` `:root` block:
-```css
-:root {
-  --cyan: #00f5ff;   /* primary accent */
-  --pink: #ff006e;   /* secondary accent */
-  --yellow: #ffbe0b; /* tertiary accent */
-  --purple: #8338ec; /* fourth accent */
-}
-```
+This portfolio is a direct reflection of my work, skills, and professional journey — built to give you a clear, honest picture of what I do and how I think.
 
-## 📁 File Structure
+It covers:
+
+- **My experience** — from Trainee Data Engineer to Solutions Architect, with the real work behind each role
+- **My certifications** — every AWS, Databricks, and Snowflake credential, with dates and IDs
+- **My projects** — real architectures and systems I've designed and shipped
+- **My skills** — the tools and platforms I work with daily, not just listed but demonstrated
+- **My talks** — knowledge sharing through technical sessions and community events
+
+Whether you're a potential employer, a client evaluating an architect, or a fellow engineer looking to connect — this site is built for you.
+
+---
+
+## Tech Stack of This Site
+
+Built with pure HTML, CSS, and JavaScript — no frameworks, no dependencies. Deployed on GitHub Pages.
+
 ```
 portfolio/
-├── index.html        ← Main page (all content here)
+├── index.html      ← All content
 ├── css/
-│   └── style.css     ← All styles
-├── js/
-│   └── main.js       ← Animations & interactions
-└── README.md
+│   └── style.css   ← Styling & animations
+└── js/
+    └── main.js     ← Interactions & effects
 ```
+
+---
+
+## Contact
+
+- **Email:** ganesh.data.expert@gmail,com
+- **LinkedIn:** [linkedin.com/in/ganeshkumar-ponraj](https://www.linkedin.com/in/ganeshkumar-ponraj)
+- **GitHub:** [github.com/geodelab](https://github.com/geodelab)
