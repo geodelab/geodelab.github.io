@@ -47,6 +47,6 @@ portfolio/
 
 ## Contact
 
-- **Email:** ganesh.data.expert@gmail,com
+- **Email:** ganesh.data.expert@gmail.com
 - **LinkedIn:** [linkedin.com/in/ganeshkumar-ponraj](https://www.linkedin.com/in/ganeshkumar-ponraj)
 - **GitHub:** [github.com/geodelab](https://github.com/geodelab)
