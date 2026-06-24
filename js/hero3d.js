@@ -5,12 +5,20 @@
 import * as THREE from 'three';
 
 const canvas = document.getElementById('hero-3d');
-if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let renderer = null;
+if (canvas) {
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  } catch (e) {
+    canvas.style.display = 'none'; // WebGL unavailable — degrade gracefully
+  }
+}
+if (canvas && renderer) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
   camera.position.z = 5;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setClearColor(0x000000, 0);
 
   // ── Group so we can offset toward the right of the hero ──
@@ -58,15 +66,15 @@ if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
   // ── Resize handling — fit hero, shift object right on wide screens ──
   function resize() {
-    const w = canvas.clientWidth || window.innerWidth;
-    const h = canvas.clientHeight || window.innerHeight;
+    const w = canvas.clientWidth || 460;
+    const h = canvas.clientHeight || 480;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    // position group toward right third on desktop, center on mobile
-    group.position.x = w > 900 ? 2.2 : 0;
-    group.position.y = w > 900 ? 0.2 : 1.4;
+    // object centered in its column; pull camera back a touch on narrow canvases
+    group.position.set(0, 0, 0);
+    camera.position.z = w < 420 ? 6 : 5;
   }
   window.addEventListener('resize', resize);
   resize();
@@ -78,7 +86,7 @@ if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     my = (e.clientY / window.innerHeight - 0.5);
   }, { passive: true });
 
-  // ── Animate ──
+  // ── Animate (or render a single static frame if reduced-motion) ──
   const clock = new THREE.Clock();
   function animate() {
     const t = clock.getElapsedTime();
@@ -91,5 +99,10 @@ if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
-  animate();
+  if (reduceMotion) {
+    group.rotation.set(0.3, 0.5, 0);
+    renderer.render(scene, camera);
+  } else {
+    animate();
+  }
 }

@@ -68,7 +68,6 @@
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <canvas id="hero-3d"></canvas>
   <div class="hero-left">
     <div class="hero-badge"><span class="dot-pulse"></span>Available for Architecture Consulting</div>
     <p class="hero-greeting">Hello, I'm</p>
@@ -103,32 +102,8 @@
   </div>
 
   <div class="hero-right">
-    <div class="arch-diagram">
-      <div class="arch-title">// enterprise data flow</div>
-      <div class="arch-layers">
-        <div class="arch-layer">
-          <div class="arch-node node-aws"><svg class="ico"><use href="#i-cloud"/></svg> AWS</div>
-          <div class="arch-node node-s3">S3 Lake</div>
-          <div class="arch-node node-lam">Glue</div>
-        </div>
-        <div class="arch-arrow-row"><div class="arch-arr">▼ ingest &amp; stage</div></div>
-        <div class="arch-layer">
-          <div class="arch-node node-db"><svg class="ico"><use href="#i-zap"/></svg> Databricks</div>
-          <div class="arch-node node-spk">PySpark</div>
-        </div>
-        <div class="arch-arrow-row"><div class="arch-arr">▼ transform (dbt / medallion)</div></div>
-        <div class="arch-layer">
-          <div class="arch-node node-snow"><svg class="ico"><use href="#i-snow"/></svg> Snowflake</div>
-          <div class="arch-node node-dbt">Redshift</div>
-        </div>
-        <div class="arch-arrow-row"><div class="arch-arr">▼ serve &amp; activate</div></div>
-        <div class="arch-layer">
-          <div class="arch-node node-ai"><svg class="ico"><use href="#i-bot"/></svg> Amazon Bedrock</div>
-          <div class="arch-node node-viz"><svg class="ico"><use href="#i-chart"/></svg> Analytics</div>
-        </div>
-      </div>
-      <div class="arch-status"><span class="status-dot"></span> Architecture online</div>
-    </div>
+    <canvas id="hero-3d"></canvas>
+    <div class="hero-3d-badge"><span class="status-dot"></span> Cloud · Data · GenAI</div>
   </div>
 
   <a href="#about" class="hero-scroll"><span>scroll</span><div class="scroll-bar"></div></a>
