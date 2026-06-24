@@ -58,12 +58,13 @@ if (canvas && renderer) {
   }, { threshold: 0.4 });
   ids.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
-  // fade the whole canvas in only after the hero (keeps hero clean)
+  // fade the whole canvas in only once the hero has essentially left the
+  // viewport — prevents any overlap with the hero character/wireframe
   let visTarget = 0;
   const hero = document.getElementById('hero');
   const heroObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { visTarget = e.isIntersecting ? 0 : 1; });
-  }, { threshold: 0.25 });
+    entries.forEach(e => { visTarget = e.intersectionRatio > 0.05 ? 0 : 1; });
+  }, { threshold: [0, 0.05, 0.1] });
   if (hero) heroObs.observe(hero);
 
   function resize() {

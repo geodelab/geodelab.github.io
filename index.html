@@ -104,7 +104,140 @@
 
   <div class="hero-right">
     <canvas id="hero-3d"></canvas>
-    <div class="hero-3d-badge"><span class="status-dot"></span> Cloud · Data · GenAI</div>
+    <div class="char-stage" id="charStage">
+      <svg class="char-svg" id="charRoot" viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" aria-label="Anime engineer character">
+        <defs>
+          <radialGradient id="cgGlow" cx="50%" cy="42%" r="55%">
+            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.55"/>
+            <stop offset="60%" stop-color="#a855f7" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="cgSkin" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffe0c4"/><stop offset="100%" stop-color="#f4c19c"/>
+          </linearGradient>
+          <linearGradient id="cgHair" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8b7bff"/><stop offset="55%" stop-color="#6d5cff"/><stop offset="100%" stop-color="#4f46e5"/>
+          </linearGradient>
+          <linearGradient id="cgHood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#22232f"/><stop offset="100%" stop-color="#14151d"/>
+          </linearGradient>
+          <radialGradient id="cgIris" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#7dd3fc"/><stop offset="55%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#4f46e5"/>
+          </radialGradient>
+          <linearGradient id="cgVisor" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.25"/><stop offset="100%" stop-color="#a855f7" stop-opacity="0.25"/>
+          </linearGradient>
+          <linearGradient id="cgNeon" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#ec4899"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ambient glow + rotating holo ring -->
+        <ellipse cx="210" cy="220" rx="180" ry="200" fill="url(#cgGlow)"/>
+        <g id="charRing" class="char-ring">
+          <circle cx="210" cy="225" r="150" fill="none" stroke="url(#cgNeon)" stroke-width="1.2" stroke-dasharray="3 10" opacity="0.6"/>
+          <circle cx="210" cy="225" r="172" fill="none" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="1 16" opacity="0.4"/>
+        </g>
+
+        <!-- breathing/idle group -->
+        <g id="charBody">
+          <!-- shoulders / hoodie -->
+          <path d="M104 470 Q108 372 168 350 L252 350 Q312 372 316 470 Z" fill="url(#cgHood)" stroke="#33344a" stroke-width="1.5"/>
+          <path d="M168 350 Q210 392 252 350 L252 366 Q210 404 168 366 Z" fill="#0e0f16"/>
+          <!-- neon collar trim -->
+          <path d="M168 352 Q210 392 252 352" fill="none" stroke="url(#cgNeon)" stroke-width="2.4" opacity="0.9"/>
+          <!-- chest emblem -->
+          <g opacity="0.95">
+            <path d="M210 408 l16 9 v18 l-16 9 -16-9 v-18 z" fill="#10121c" stroke="#22d3ee" stroke-width="1.6"/>
+            <text x="210" y="431" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#22d3ee">AI</text>
+          </g>
+          <!-- neck -->
+          <rect x="190" y="300" width="40" height="56" rx="16" fill="url(#cgSkin)"/>
+          <path d="M190 318 q20 18 40 0 v20 q-20 16 -40 0 z" fill="#e0a87f" opacity="0.5"/>
+
+          <!-- hair back -->
+          <path d="M118 196 Q112 80 210 74 Q308 80 302 196 Q300 150 210 140 Q120 150 118 196 Z" fill="url(#cgHair)"/>
+
+          <!-- head group (tilts toward cursor) -->
+          <g id="charHead">
+            <!-- ears -->
+            <ellipse cx="138" cy="222" rx="14" ry="20" fill="url(#cgSkin)"/>
+            <ellipse cx="282" cy="222" rx="14" ry="20" fill="url(#cgSkin)"/>
+            <!-- face -->
+            <path d="M140 200 Q140 120 210 118 Q280 120 280 200 Q280 280 210 296 Q140 280 140 200 Z" fill="url(#cgSkin)"/>
+            <!-- cheek blush -->
+            <ellipse cx="168" cy="232" rx="14" ry="8" fill="#ff9aa8" opacity="0.25"/>
+            <ellipse cx="252" cy="232" rx="14" ry="8" fill="#ff9aa8" opacity="0.25"/>
+
+            <!-- brows -->
+            <path d="M158 184 q22 -10 44 -2" fill="none" stroke="#5b4fd1" stroke-width="4" stroke-linecap="round"/>
+            <path d="M218 182 q22 -8 44 2" fill="none" stroke="#5b4fd1" stroke-width="4" stroke-linecap="round"/>
+
+            <!-- eyes -->
+            <g id="charEyes">
+              <ellipse cx="180" cy="208" rx="22" ry="18" fill="#fff"/>
+              <ellipse cx="240" cy="208" rx="22" ry="18" fill="#fff"/>
+              <g id="charPupils">
+                <circle cx="180" cy="208" r="11" fill="url(#cgIris)"/>
+                <circle cx="240" cy="208" r="11" fill="url(#cgIris)"/>
+                <circle cx="180" cy="208" r="5" fill="#0b1020"/>
+                <circle cx="240" cy="208" r="5" fill="#0b1020"/>
+                <circle cx="184" cy="204" r="3" fill="#fff"/>
+                <circle cx="244" cy="204" r="3" fill="#fff"/>
+              </g>
+              <!-- eyelids (blink) -->
+              <rect id="lidL" x="156" y="186" width="48" height="0" rx="8" fill="url(#cgSkin)"/>
+              <rect id="lidR" x="216" y="186" width="48" height="0" rx="8" fill="url(#cgSkin)"/>
+            </g>
+
+            <!-- nose + mouth -->
+            <path d="M210 218 l-4 16 q4 4 8 0" fill="none" stroke="#e0a87f" stroke-width="2" stroke-linecap="round"/>
+            <path id="charMouth" d="M194 256 q16 14 32 0" fill="none" stroke="#c96a6a" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- hair front (bangs) -->
+            <path d="M132 196 Q126 96 210 92 Q294 96 288 196 Q286 150 250 150 Q244 120 210 122 Q176 120 170 150 Q134 150 132 196 Z" fill="url(#cgHair)"/>
+            <path d="M196 96 Q150 110 150 168 Q176 132 210 130 Q200 110 196 96 Z" fill="#a78bfa" opacity="0.55"/>
+            <path d="M224 96 Q270 112 268 170 Q250 134 220 132 Q224 112 224 96 Z" fill="#a78bfa" opacity="0.4"/>
+
+            <!-- AR visor -->
+            <g opacity="0.9">
+              <rect x="150" y="194" width="120" height="30" rx="14" fill="url(#cgVisor)" stroke="#22d3ee" stroke-width="1.4"/>
+              <line x1="156" y1="200" x2="264" y2="200" stroke="#22d3ee" stroke-width="1" opacity="0.6"/>
+            </g>
+
+            <!-- headphones -->
+            <path d="M126 214 Q120 120 210 116 Q300 120 294 214" fill="none" stroke="#2a2c3c" stroke-width="10" stroke-linecap="round"/>
+            <path d="M126 214 Q120 120 210 116 Q300 120 294 214" fill="none" stroke="url(#cgNeon)" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+            <rect x="120" y="206" width="26" height="40" rx="10" fill="#1b1d2a" stroke="#22d3ee" stroke-width="1.4"/>
+            <rect x="274" y="206" width="26" height="40" rx="10" fill="#1b1d2a" stroke="#ec4899" stroke-width="1.4"/>
+            <circle cx="133" cy="226" r="4" fill="#22d3ee"/>
+            <circle cx="287" cy="226" r="4" fill="#ec4899"/>
+          </g>
+        </g>
+
+        <!-- floating holographic cards -->
+        <g class="holo holo-1" opacity="0.9">
+          <rect x="40" y="120" width="78" height="56" rx="8" fill="#0e1322" stroke="#22d3ee" stroke-width="1.2" opacity="0.85"/>
+          <rect x="50" y="156" width="10" height="12" fill="#22d3ee"/>
+          <rect x="64" y="146" width="10" height="22" fill="#6366f1"/>
+          <rect x="78" y="138" width="10" height="30" fill="#a855f7"/>
+          <rect x="92" y="150" width="10" height="18" fill="#ec4899"/>
+          <text x="50" y="138" font-family="JetBrains Mono" font-size="8" fill="#7dd3fc">METRICS</text>
+        </g>
+        <g class="holo holo-2" opacity="0.9">
+          <rect x="300" y="150" width="92" height="60" rx="8" fill="#0e1322" stroke="#a855f7" stroke-width="1.2" opacity="0.85"/>
+          <text x="310" y="168" font-family="JetBrains Mono" font-size="8" fill="#c4b5fd">~/pipeline.py</text>
+          <rect x="310" y="176" width="50" height="4" rx="2" fill="#22d3ee" opacity="0.7"/>
+          <rect x="310" y="184" width="70" height="4" rx="2" fill="#6366f1" opacity="0.7"/>
+          <rect x="310" y="192" width="40" height="4" rx="2" fill="#ec4899" opacity="0.7"/>
+        </g>
+        <g class="holo holo-3" opacity="0.85">
+          <rect x="316" y="300" width="64" height="34" rx="8" fill="#0e1322" stroke="#22d3ee" stroke-width="1.2"/>
+          <text x="348" y="322" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#22d3ee">&lt;/&gt;</text>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-3d-badge"><span class="status-dot"></span> AI ENGINEER · ONLINE</div>
   </div>
 
   <a href="#about" class="hero-scroll"><span>scroll</span><div class="scroll-bar"></div></a>
@@ -690,6 +823,7 @@
 <script type="module" src="js/hero3d.js"></script>
 <script type="module" src="js/avatar.js"></script>
 <script type="module" src="js/scene3d.js"></script>
+<script src="js/character.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
