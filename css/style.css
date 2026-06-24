@@ -864,3 +864,149 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
   .cert-row { grid-template-columns: 1fr; }
   .cert-count-row { gap: 12px; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   ⚡ ANIME / CYBER THEME UPGRADE — moving visuals & glow
+   ═══════════════════════════════════════════════════════ */
+
+/* Brighter, richer neon palette */
+:root {
+  --cyan:   #2af6ff;
+  --pink:   #ff2e97;
+  --purple: #9d4bff;
+  --green:  #1fffa8;
+  --glow:   0 0 40px rgba(42,246,255,0.35);
+}
+
+/* ── AURORA GRADIENT BLOBS (slow drifting color clouds) ── */
+.aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.aurora-blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(90px); opacity: 0.30; mix-blend-mode: screen;
+}
+.ab1 { width: 50vw; height: 50vw; top: -12%; left: -8%;
+  background: radial-gradient(circle, #9d4bff, transparent 70%);
+  animation: drift1 22s ease-in-out infinite; }
+.ab2 { width: 46vw; height: 46vw; top: 18%; right: -10%;
+  background: radial-gradient(circle, #2af6ff, transparent 70%);
+  animation: drift2 28s ease-in-out infinite; }
+.ab3 { width: 42vw; height: 42vw; bottom: -14%; left: 28%;
+  background: radial-gradient(circle, #ff2e97, transparent 70%);
+  animation: drift3 26s ease-in-out infinite; }
+@keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(12vw,8vh) scale(1.15)} 66%{transform:translate(-6vw,14vh) scale(0.9)} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-14vw,10vh) scale(1.2)} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1)} 40%{transform:translate(10vw,-10vh) scale(1.1)} 75%{transform:translate(-10vw,-4vh) scale(0.95)} }
+
+/* ── NEON PERSPECTIVE GRID FLOOR ── */
+.grid-floor {
+  position: fixed; bottom: 0; left: 0; right: 0; height: 45vh;
+  z-index: 0; pointer-events: none; opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(42,246,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42,246,255,0.5) 1px, transparent 1px);
+  background-size: 44px 44px;
+  transform: perspective(380px) rotateX(64deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, #000 0%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 90%);
+  animation: gridmove 4s linear infinite;
+}
+@keyframes gridmove { to { background-position: 0 44px, 44px 0; } }
+
+/* ── CRT SCANLINES ── */
+.scanlines {
+  position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: 0.5;
+  background: repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0,0,0,0.18) 2px 3px);
+  mix-blend-mode: multiply;
+}
+
+/* ── GLITCH TEXT (hero name) ── */
+.glitch { position: relative; display: inline-block; }
+.glitch::before, .glitch::after {
+  content: attr(data-text); position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; overflow: hidden;
+}
+.name-first.glitch::before, .name-last.glitch::before {
+  color: var(--pink); z-index: -1;
+  animation: glitchTop 3.2s infinite steps(2,end);
+}
+.name-first.glitch::after, .name-last.glitch::after {
+  color: var(--cyan); z-index: -2;
+  animation: glitchBot 2.7s infinite steps(2,end);
+}
+@keyframes glitchTop {
+  0%,92%,100% { transform: translate(0,0); opacity: 0; }
+  93% { transform: translate(-3px,-2px); opacity: 0.9; clip-path: inset(0 0 62% 0); }
+  96% { transform: translate(3px,1px);  opacity: 0.9; clip-path: inset(0 0 38% 0); }
+}
+@keyframes glitchBot {
+  0%,90%,100% { transform: translate(0,0); opacity: 0; }
+  94% { transform: translate(3px,2px);  opacity: 0.9; clip-path: inset(58% 0 0 0); }
+  97% { transform: translate(-3px,-1px);opacity: 0.9; clip-path: inset(72% 0 0 0); }
+}
+.name-last { animation: neonFlicker 4s infinite; }
+@keyframes neonFlicker {
+  0%,18%,22%,25%,53%,57%,100% { text-shadow: 0 0 8px var(--cyan), 0 0 28px rgba(42,246,255,0.55), 0 0 52px rgba(42,246,255,0.35); }
+  20%,24%,55% { text-shadow: none; }
+}
+
+/* ── ANIMATED GRADIENT on section headings & gradient text ── */
+.grad-text {
+  background: linear-gradient(100deg, var(--cyan), var(--purple), var(--pink), var(--cyan));
+  background-size: 300% 100%;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: gradSlide 6s linear infinite;
+}
+@keyframes gradSlide { to { background-position: 300% 0; } }
+
+/* ── ANIMATED NEON BORDER on key cards ── */
+.tl-featured, .proj-hero-card, .domain-card, .speak-featured {
+  position: relative;
+}
+.tl-featured::after, .proj-hero-card::after {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit;
+  padding: 1px; pointer-events: none;
+  background: linear-gradient(120deg, var(--cyan), transparent 30%, transparent 70%, var(--pink));
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: gradSlideXY 5s linear infinite; opacity: 0.7;
+}
+@keyframes gradSlideXY { to { background-position: 200% 200%; } }
+
+/* ── HERO NAME bigger glow ── */
+.name-last { color: var(--cyan); }
+
+/* ── BUTTONS: pulse glow ── */
+.btn-glow { background: linear-gradient(100deg, var(--cyan), var(--purple)); color:#04060f; }
+.btn-glow:hover { box-shadow: 0 0 50px rgba(42,246,255,0.6), 0 0 90px rgba(157,75,255,0.4); }
+
+/* ── METRIC numbers gradient ── */
+.metric-val, .cert-count-num {
+  background: linear-gradient(120deg, var(--cyan), var(--pink));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── CHIPS: glow on hover with lift ── */
+.chip:hover { box-shadow: 0 0 18px rgba(42,246,255,0.25); transform: translateY(-2px); }
+
+/* ── SECTION reveal animation ── */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ── Make hero canvas brighter ── */
+#bg-canvas { opacity: 0.5 !important; }
+
+/* ── Avatar core spin glow ── */
+.avatar-core { animation: corePulse 3s ease-in-out infinite; }
+@keyframes corePulse {
+  0%,100% { box-shadow: 0 0 40px rgba(42,246,255,0.4); }
+  50% { box-shadow: 0 0 70px rgba(157,75,255,0.7), 0 0 30px rgba(255,46,151,0.5); }
+}
+
+/* reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob, .grid-floor, .glitch::before, .glitch::after,
+  .name-last, .grad-text, .tl-featured::after, .proj-hero-card::after,
+  .avatar-core { animation: none !important; }
+}

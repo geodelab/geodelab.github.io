@@ -2,39 +2,75 @@
    GEODELAB — main.js
    ============================================= */
 
-/* ── MATRIX RAIN CANVAS ── */
+/* ── INTERACTIVE PARTICLE CONSTELLATION NETWORK ── */
 (function () {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let W, H, drops;
-
-  const chars = 'AWS01アイGENCLOUDSNOWAIRAGDBTSQLPYTHONLAKEHOUSE⚡❄️☁️🤖'.split('');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, particles = [];
+  const mouse = { x: -9999, y: -9999 };
+  const COLORS = ['42,246,255', '157,75,255', '255,46,151', '31,255,168'];
 
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    const cols = Math.floor(W / 22);
-    if (!drops || drops.length !== cols) drops = Array.from({length: cols}, () => Math.random() * -50);
+    const count = Math.min(110, Math.floor((W * H) / 14000));
+    particles = Array.from({ length: count }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.8 + 0.6,
+      c: COLORS[Math.floor(Math.random() * COLORS.length)],
+    }));
   }
 
   function draw() {
-    ctx.fillStyle = 'rgba(4,7,16,0.06)';
-    ctx.fillRect(0, 0, W, H);
-    ctx.fillStyle = '#00e5ff';
-    ctx.font = '12px JetBrains Mono, monospace';
-    drops.forEach((y, i) => {
-      ctx.globalAlpha = 0.5 + Math.random() * 0.5;
-      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * 22, y * 20);
-      if (y * 20 > H && Math.random() > 0.975) drops[i] = 0;
-      drops[i] += 0.5;
-    });
-    ctx.globalAlpha = 1;
+    ctx.clearRect(0, 0, W, H);
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+
+      // mouse repel / attract
+      const dx = p.x - mouse.x, dy = p.y - mouse.y;
+      const d = Math.hypot(dx, dy);
+      if (d < 140) {
+        const f = (140 - d) / 140 * 0.6;
+        p.x += (dx / d) * f; p.y += (dy / d) * f;
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.c},0.9)`;
+      ctx.shadowBlur = 8; ctx.shadowColor = `rgba(${p.c},0.8)`;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      // links
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dist = Math.hypot(p.x - q.x, p.y - q.y);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = `rgba(${p.c},${(1 - dist / 130) * 0.18})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
   }
 
   window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
   resize();
-  setInterval(draw, 55);
+  if (!reduce) draw(); else { ctx.clearRect(0,0,W,H); }
 })();
 
 /* ── TYPEWRITER ── */
