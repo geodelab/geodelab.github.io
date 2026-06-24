@@ -93,14 +93,20 @@ body {
 
 .nav-brand {
   display: flex; align-items: center; gap: 10px;
-  font-family: var(--ff-head); font-weight: 900; font-size: 1.1rem;
-  letter-spacing: 1px;
+  text-decoration: none;
 }
-.brand-bracket { color: var(--cyan); font-size: 1.3rem; }
-.brand-g { color: var(--cyan); }
-.brand-k { color: var(--purple); }
-.brand-sub { font-size: 0.75rem; letter-spacing: 3px; color: var(--lgray); }
-.brand-sub .c-cyan { color: var(--cyan); }
+.brand-orb {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--cyan), var(--acc-violet), var(--acc-mag), var(--acc-cyan), var(--cyan));
+  box-shadow: 0 0 14px rgba(99,102,241,0.7);
+  animation: orbSpin 6s linear infinite;
+}
+@keyframes orbSpin { to { transform: rotate(360deg); } }
+.brand-word {
+  font-family: var(--ff-mono); font-size: 0.78rem;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--lgray);
+}
+.nav-brand:hover .brand-word { color: var(--white); }
 
 .nav-links { display: flex; list-style: none; gap: 1.8rem; }
 .nav-links a {
@@ -1000,6 +1006,14 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
 
 /* ── Hero background canvas (particles) — subtle ── */
 #bg-canvas { opacity: 0.4 !important; }
+
+/* ── Section-aware 3D background (one renderer, morphs per section) ── */
+#scene-3d {
+  position: fixed; inset: 0; width: 100vw; height: 100vh;
+  z-index: 0; pointer-events: none; opacity: 0;
+  transition: opacity 0.4s ease;
+}
+@media (max-width: 768px) { #scene-3d { display: none; } } /* simplify on mobile */
 
 /* ── Inline SVG icon system ── */
 .ico { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em;

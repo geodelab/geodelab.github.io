@@ -39,6 +39,7 @@
 </svg>
 
 <canvas id="bg-canvas"></canvas>
+<canvas id="scene-3d"></canvas>
 <div class="aurora">
   <span class="aurora-blob ab1"></span>
   <span class="aurora-blob ab2"></span>
@@ -48,10 +49,10 @@
 
 <!-- ═══ NAV ═══ -->
 <nav id="navbar">
-  <div class="nav-brand">
-    <span class="brand-bracket">[</span><span class="brand-g">G</span><span class="brand-k">K</span><span class="brand-bracket">]</span>
-    <span class="brand-sub">GANESH<span class="c-cyan"> KUMAR P</span></span>
-  </div>
+  <a href="#hero" class="nav-brand" aria-label="Top">
+    <span class="brand-orb"></span>
+    <span class="brand-word">portfolio</span>
+  </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about"><span class="n">01</span>About</a></li>
     <li><a href="#experience"><span class="n">02</span>Experience</a></li>
@@ -59,7 +60,7 @@
     <li><a href="#certifications"><span class="n">04</span>Certifications</a></li>
     <li><a href="#projects"><span class="n">05</span>Projects</a></li>
     <li><a href="#speaking"><span class="n">06</span>Speaking</a></li>
-    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+    <li><a href="#contact" class="nav-hire">Let's Talk</a></li>
   </ul>
   <button class="hamburger" id="ham" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -687,6 +688,7 @@
 { "imports": { "three": "./js/vendor/three.module.js" } }
 </script>
 <script type="module" src="js/hero3d.js"></script>
+<script type="module" src="js/scene3d.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
