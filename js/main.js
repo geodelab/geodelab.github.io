@@ -7,7 +7,6 @@
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let W, H, particles = [];
   const mouse = { x: -9999, y: -9999 };
   const COLORS = ['99,102,241', '129,140,248', '167,139,250'];
@@ -70,7 +69,7 @@
   window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
   window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
   resize();
-  if (!reduce) draw(); else { ctx.clearRect(0,0,W,H); }
+  draw();
 })();
 
 /* ── TYPEWRITER ── */

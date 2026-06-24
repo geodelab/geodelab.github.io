@@ -16,6 +16,10 @@
   --pink:     #a78bfa;   /* tertiary (soft violet) — keeps gradients on-palette */
   --yellow:   #fbbf24;
   --green:    #34d399;   /* status only */
+  /* Vibrant secondary accents — used in gradients & glows for energy */
+  --acc-cyan: #22d3ee;   /* electric cyan */
+  --acc-mag:  #ec4899;   /* magenta/pink */
+  --acc-violet:#a855f7;  /* vivid violet */
   /* Brand colors for tech tiles (kept accurate) */
   --aws:      #ff9900;
   --snow:     #29b5e8;
@@ -917,45 +921,78 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
 .grid-floor, .scanlines { display: none !important; }
 .glitch::before, .glitch::after { display: none !important; }
 
-/* ── HERO NAME — clean gradient, subtle glow (no glitch) ── */
+/* ── HERO NAME — vibrant multi-hue gradient ── */
 .name-last {
-  background: linear-gradient(120deg, var(--cyan), var(--pink));
+  background: linear-gradient(110deg, var(--cyan) 0%, var(--acc-violet) 45%, var(--acc-mag) 100%);
+  background-size: 200% 100%;
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   text-shadow: none;
+  animation: gradSlide 7s ease-in-out infinite alternate;
 }
 
 /* ── ANIMATED GRADIENT on section headings & gradient text ── */
 .grad-text {
-  background: linear-gradient(100deg, var(--cyan), var(--purple), var(--pink), var(--cyan));
+  background: linear-gradient(100deg, var(--cyan), var(--acc-cyan), var(--acc-violet), var(--acc-mag), var(--cyan));
   background-size: 300% 100%;
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   animation: gradSlide 8s linear infinite;
 }
 @keyframes gradSlide { to { background-position: 300% 0; } }
 
-/* ── SUBTLE GRADIENT BORDER on hero cards (static, refined) ── */
+/* ── ANIMATED GRADIENT BORDER on hero cards ── */
 .tl-featured, .proj-hero-card, .domain-card, .speak-featured { position: relative; }
 .tl-featured::after, .proj-hero-card::after {
   content: ''; position: absolute; inset: -1px; border-radius: inherit;
   padding: 1px; pointer-events: none;
-  background: linear-gradient(135deg, rgba(99,102,241,0.6), transparent 40%, transparent 65%, rgba(167,139,250,0.45));
+  background: linear-gradient(120deg, var(--cyan), var(--acc-cyan) 30%, transparent 50%, var(--acc-mag) 80%, var(--acc-violet));
+  background-size: 300% 300%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude;
-  opacity: 0.8;
+  opacity: 0.85; animation: gradBorder 6s linear infinite;
 }
+@keyframes gradBorder { to { background-position: 300% 0; } }
 
-/* ── BUTTONS: refined indigo gradient ── */
-.btn-glow { background: linear-gradient(100deg, var(--cyan), var(--purple)); color:#fff; }
-.btn-glow:hover { box-shadow: 0 8px 30px rgba(99,102,241,0.45), 0 0 0 1px rgba(129,140,248,0.3); }
+/* ── BUTTONS: vibrant gradient + animated sheen ── */
+.btn-glow {
+  background: linear-gradient(100deg, var(--cyan), var(--acc-violet) 55%, var(--acc-mag));
+  background-size: 200% 100%; color:#fff;
+  animation: gradSlide 6s ease-in-out infinite alternate;
+}
+.btn-glow:hover { box-shadow: 0 10px 36px rgba(124,80,255,0.5), 0 0 22px rgba(34,211,238,0.35); }
 
 /* ── METRIC numbers gradient ── */
 .metric-val, .cert-count-num {
-  background: linear-gradient(120deg, var(--cyan), var(--pink));
+  background: linear-gradient(120deg, var(--acc-cyan), var(--cyan), var(--acc-mag));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
-/* ── CHIPS: soft glow on hover ── */
-.chip:hover { box-shadow: 0 0 18px rgba(99,102,241,0.2); transform: translateY(-2px); }
+/* ── CHIPS: colorful glow on hover ── */
+.chip:hover { box-shadow: 0 0 18px rgba(34,211,238,0.28); transform: translateY(-2px); border-color: var(--acc-cyan); color: var(--acc-cyan); }
+
+/* ── COLORFUL DOMAIN CARDS — each its own accent ── */
+.domain-card { border-top: 2px solid transparent; transition: all 0.3s; }
+.skills-domains .domain-card:nth-child(1){ --dc:#22d3ee; }
+.skills-domains .domain-card:nth-child(2){ --dc:#6366f1; }
+.skills-domains .domain-card:nth-child(3){ --dc:#a855f7; }
+.skills-domains .domain-card:nth-child(4){ --dc:#ec4899; }
+.skills-domains .domain-card:nth-child(5){ --dc:#34d399; }
+.domain-card { border-top-color: color-mix(in srgb, var(--dc, var(--cyan)) 55%, transparent); }
+.domain-card .domain-icon .ico { stroke: var(--dc, var(--cyan)); }
+.domain-card:hover {
+  border-color: var(--dc, var(--cyan));
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 30px color-mix(in srgb, var(--dc, var(--cyan)) 22%, transparent);
+  transform: translateY(-6px);
+}
+.domain-card .bar-fill { background: linear-gradient(90deg, var(--dc, var(--cyan)), color-mix(in srgb, var(--dc, var(--cyan)) 40%, #fff)); box-shadow: 0 0 10px color-mix(in srgb, var(--dc, var(--cyan)) 60%, transparent); }
+.domain-card .dbar em { color: var(--dc, var(--cyan)); }
+
+/* ── Brighter ambient aurora (less dull) ── */
+.aurora-blob { opacity: 0.20 !important; }
+.ab2 { background: radial-gradient(circle, var(--acc-cyan), transparent 70%) !important; }
+.ab3 { background: radial-gradient(circle, var(--acc-mag), transparent 70%) !important; }
+
+/* ── Stack tiles: vivid hover ── */
+.stack-item:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 22px color-mix(in srgb, var(--c) 45%, transparent); }
 
 /* ── SECTION reveal animation ── */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1); }
@@ -985,7 +1022,9 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
   50% { box-shadow: 0 0 55px rgba(129,140,248,0.55); }
 }
 
-/* reduce motion respect */
+/* Note: decorative gradient/glow animations are kept on intentionally
+   (site owner's request for a lively, vibrant hero). Only the large
+   drifting aurora is calmed under reduced-motion. */
 @media (prefers-reduced-motion: reduce) {
-  .aurora-blob, .grad-text, .avatar-core { animation: none !important; }
+  .aurora-blob { animation-duration: 60s !important; }
 }

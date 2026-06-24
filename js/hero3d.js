@@ -1,11 +1,11 @@
 /* =============================================
-   HERO 3D — Three.js animated object
-   Premium indigo wireframe icosahedron + particle halo
+   HERO 3D — Three.js living object
+   Vibrant indigo→cyan→magenta wireframe icosahedron
+   with glowing vertices + colour-shifting halo
    ============================================= */
 import * as THREE from 'three';
 
 const canvas = document.getElementById('hero-3d');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let renderer = null;
 if (canvas) {
   try {
@@ -18,53 +18,69 @@ if (canvas && renderer) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
   camera.position.z = 5;
-
   renderer.setClearColor(0x000000, 0);
 
-  // ── Group so we can offset toward the right of the hero ──
   const group = new THREE.Group();
   scene.add(group);
 
-  // ── Wireframe icosahedron ──
-  const geo = new THREE.IcosahedronGeometry(1.5, 1);
-  const wire = new THREE.LineSegments(
-    new THREE.WireframeGeometry(geo),
-    new THREE.LineBasicMaterial({ color: 0x6366f1, transparent: true, opacity: 0.55 })
+  // ── Inner glowing core (additive) ──
+  const core = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.05, 1),
+    new THREE.MeshBasicMaterial({ color: 0x6d5cff, transparent: true, opacity: 0.16, blending: THREE.AdditiveBlending })
   );
-  group.add(wire);
+  group.add(core);
 
-  // ── Inner glowing solid (subtle) ──
-  const inner = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.46, 1),
-    new THREE.MeshBasicMaterial({ color: 0x4338ca, transparent: true, opacity: 0.08 })
+  // ── Outer wireframe (indigo) ──
+  const geoOuter = new THREE.IcosahedronGeometry(1.6, 1);
+  const wireOuter = new THREE.LineSegments(
+    new THREE.WireframeGeometry(geoOuter),
+    new THREE.LineBasicMaterial({ color: 0x7c7bff, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending })
   );
-  group.add(inner);
+  group.add(wireOuter);
 
-  // ── Vertex glow points ──
+  // ── Mid wireframe (cyan), counter-rotated for shimmer ──
+  const geoMid = new THREE.IcosahedronGeometry(1.32, 1);
+  const wireMid = new THREE.LineSegments(
+    new THREE.WireframeGeometry(geoMid),
+    new THREE.LineBasicMaterial({ color: 0x2dd4ff, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending })
+  );
+  group.add(wireMid);
+
+  // ── Glowing vertices (bright, additive) ──
   const pts = new THREE.Points(
-    geo,
-    new THREE.PointsMaterial({ color: 0xa78bfa, size: 0.07, transparent: true, opacity: 0.9 })
+    geoOuter,
+    new THREE.PointsMaterial({ color: 0xf0abfc, size: 0.11, transparent: true, opacity: 1, blending: THREE.AdditiveBlending, depthWrite: false })
   );
   group.add(pts);
 
-  // ── Particle halo around it ──
-  const haloCount = 600;
+  // ── Colour-shifting particle halo ──
+  const haloCount = 900;
   const positions = new Float32Array(haloCount * 3);
+  const colors = new Float32Array(haloCount * 3);
+  const palette = [
+    new THREE.Color(0x6366f1), // indigo
+    new THREE.Color(0x22d3ee), // cyan
+    new THREE.Color(0xec4899), // magenta
+    new THREE.Color(0xa78bfa), // violet
+  ];
   for (let i = 0; i < haloCount; i++) {
-    const r = 2.4 + Math.random() * 2.6;
+    const r = 2.3 + Math.random() * 3.0;
     const t = Math.random() * Math.PI * 2;
     const p = Math.acos(2 * Math.random() - 1);
     positions[i * 3]     = r * Math.sin(p) * Math.cos(t);
     positions[i * 3 + 1] = r * Math.sin(p) * Math.sin(t);
     positions[i * 3 + 2] = r * Math.cos(p);
+    const c = palette[(Math.random() * palette.length) | 0];
+    colors[i * 3] = c.r; colors[i * 3 + 1] = c.g; colors[i * 3 + 2] = c.b;
   }
   const haloGeo = new THREE.BufferGeometry();
   haloGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  haloGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
   const halo = new THREE.Points(haloGeo,
-    new THREE.PointsMaterial({ color: 0x818cf8, size: 0.025, transparent: true, opacity: 0.7 }));
+    new THREE.PointsMaterial({ size: 0.04, transparent: true, opacity: 0.85, vertexColors: true, blending: THREE.AdditiveBlending, depthWrite: false }));
   scene.add(halo);
 
-  // ── Resize handling — fit hero, shift object right on wide screens ──
+  // ── Resize ──
   function resize() {
     const w = canvas.clientWidth || 460;
     const h = canvas.clientHeight || 480;
@@ -72,37 +88,51 @@ if (canvas && renderer) {
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    // object centered in its column; pull camera back a touch on narrow canvases
     group.position.set(0, 0, 0);
     camera.position.z = w < 420 ? 6 : 5;
   }
   window.addEventListener('resize', resize);
   resize();
 
-  // ── Mouse parallax ──
-  let mx = 0, my = 0;
+  // ── Smooth mouse parallax ──
+  let mx = 0, my = 0, tmx = 0, tmy = 0;
   window.addEventListener('mousemove', e => {
-    mx = (e.clientX / window.innerWidth - 0.5);
-    my = (e.clientY / window.innerHeight - 0.5);
+    tmx = (e.clientX / window.innerWidth - 0.5);
+    tmy = (e.clientY / window.innerHeight - 0.5);
   }, { passive: true });
 
-  // ── Animate (or render a single static frame if reduced-motion) ──
+  // ── Animate — always alive ──
   const clock = new THREE.Clock();
+  const hsl = { h: 0, s: 0, l: 0 };
   function animate() {
     const t = clock.getElapsedTime();
-    group.rotation.y = t * 0.18 + mx * 0.6;
-    group.rotation.x = t * 0.10 + my * 0.4;
-    const s = 1 + Math.sin(t * 1.2) * 0.03;
+    mx += (tmx - mx) * 0.05;
+    my += (tmy - my) * 0.05;
+
+    // continuous, clearly-visible rotation
+    group.rotation.y = t * 0.35 + mx * 0.9;
+    group.rotation.x = t * 0.18 + my * 0.6;
+
+    // counter-rotate the mid shell for a shimmering interplay
+    wireMid.rotation.y = -t * 0.5;
+    wireMid.rotation.z = t * 0.25;
+
+    // breathing scale
+    const s = 1 + Math.sin(t * 1.4) * 0.04;
     group.scale.set(s, s, s);
-    halo.rotation.y = -t * 0.04;
-    halo.rotation.x = t * 0.02;
+
+    // gentle hue cycling on the outer wireframe (indigo ↔ violet ↔ cyan)
+    const hue = (0.62 + Math.sin(t * 0.25) * 0.08); // ~ indigo-violet band
+    wireOuter.material.color.setHSL(hue, 0.85, 0.68);
+    pts.material.color.getHSL(hsl);
+    pts.material.color.setHSL((0.78 + Math.sin(t * 0.4) * 0.06), 0.9, 0.8);
+
+    // drifting halo
+    halo.rotation.y = -t * 0.06;
+    halo.rotation.x = t * 0.03;
+
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
-  if (reduceMotion) {
-    group.rotation.set(0.3, 0.5, 0);
-    renderer.render(scene, camera);
-  } else {
-    animate();
-  }
+  animate();
 }
