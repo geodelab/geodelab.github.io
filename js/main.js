@@ -10,7 +10,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let W, H, particles = [];
   const mouse = { x: -9999, y: -9999 };
-  const COLORS = ['42,246,255', '157,75,255', '255,46,151', '31,255,168'];
+  const COLORS = ['99,102,241', '129,140,248', '167,139,250'];
 
   function resize() {
     W = canvas.width = window.innerWidth;
@@ -221,7 +221,7 @@
 (function () {
   if (window.matchMedia('(pointer: coarse)').matches) return;
   const g = document.createElement('div');
-  g.style.cssText = 'position:fixed;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,0.03) 0%,transparent 70%);pointer-events:none;z-index:1;transition:left .12s,top .12s;transform:translate(-50%,-50%)';
+  g.style.cssText = 'position:fixed;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.04) 0%,transparent 70%);pointer-events:none;z-index:1;transition:left .12s,top .12s;transform:translate(-50%,-50%)';
   document.body.appendChild(g);
   window.addEventListener('mousemove', e => {
     g.style.left = e.clientX + 'px';
@@ -236,7 +236,7 @@
   setInterval(() => {
     nodes.forEach(n => n.style.boxShadow = '');
     if (nodes[i]) {
-      nodes[i].style.boxShadow = '0 0 16px rgba(0,229,255,0.4)';
+      nodes[i].style.boxShadow = '0 0 16px rgba(99,102,241,0.45)';
       nodes[i].style.transform = 'scale(1.04)';
       setTimeout(() => { if (nodes[i]) { nodes[i].style.boxShadow = ''; nodes[i].style.transform = ''; } }, 500);
     }

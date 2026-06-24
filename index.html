@@ -7,10 +7,36 @@
   <meta name="description" content="Ganesh Kumar P — Solutions Architect @ Zeb | AWS Data & GenAI Architect | Databricks | Snowflake | Tech Speaker"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+
+<!-- ═══ SVG ICON SPRITE (Lucide-style) ═══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></symbol>
+    <symbol id="i-cog" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="6.5" cy="12.5" r=".8"/><path d="M12 2a10 10 0 1 0 0 20 2.5 2.5 0 0 0 2-4 2.5 2.5 0 0 1 2-4h2a4 4 0 0 0 4-4 10 10 0 0 0-10-8Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-9h4v1.5"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.18 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2l-5-4.8 7-.9L12 2Z"/></symbol>
+  </defs>
+</svg>
 
 <canvas id="bg-canvas"></canvas>
 <div class="aurora">
@@ -18,8 +44,6 @@
   <span class="aurora-blob ab2"></span>
   <span class="aurora-blob ab3"></span>
 </div>
-<div class="grid-floor"></div>
-<div class="scanlines"></div>
 <div class="noise-overlay"></div>
 
 <!-- ═══ NAV ═══ -->
@@ -44,12 +68,13 @@
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
+  <canvas id="hero-3d"></canvas>
   <div class="hero-left">
     <div class="hero-badge"><span class="dot-pulse"></span>Available for Architecture Consulting</div>
     <p class="hero-greeting">Hello, I'm</p>
     <h1 class="hero-name">
-      <span class="name-first glitch" data-text="Ganesh">Ganesh</span>
-      <span class="name-last glitch" data-text="Kumar P">Kumar P</span>
+      <span class="name-first">Ganesh</span>
+      <span class="name-last">Kumar P</span>
     </h1>
     <div class="hero-title-row">
       <span class="title-prefix">//</span>
@@ -82,24 +107,24 @@
       <div class="arch-title">// enterprise data flow</div>
       <div class="arch-layers">
         <div class="arch-layer">
-          <div class="arch-node node-aws">☁️ AWS</div>
+          <div class="arch-node node-aws"><svg class="ico"><use href="#i-cloud"/></svg> AWS</div>
           <div class="arch-node node-s3">S3 Lake</div>
-          <div class="arch-node node-lam">λ Glue</div>
+          <div class="arch-node node-lam">Glue</div>
         </div>
         <div class="arch-arrow-row"><div class="arch-arr">▼ ingest &amp; stage</div></div>
         <div class="arch-layer">
-          <div class="arch-node node-db">⚡ Databricks</div>
+          <div class="arch-node node-db"><svg class="ico"><use href="#i-zap"/></svg> Databricks</div>
           <div class="arch-node node-spk">PySpark</div>
         </div>
         <div class="arch-arrow-row"><div class="arch-arr">▼ transform (dbt / medallion)</div></div>
         <div class="arch-layer">
-          <div class="arch-node node-snow">❄️ Snowflake</div>
+          <div class="arch-node node-snow"><svg class="ico"><use href="#i-snow"/></svg> Snowflake</div>
           <div class="arch-node node-dbt">Redshift</div>
         </div>
         <div class="arch-arrow-row"><div class="arch-arr">▼ serve &amp; activate</div></div>
         <div class="arch-layer">
-          <div class="arch-node node-ai">🤖 Amazon Bedrock</div>
-          <div class="arch-node node-viz">📊 Analytics</div>
+          <div class="arch-node node-ai"><svg class="ico"><use href="#i-bot"/></svg> Amazon Bedrock</div>
+          <div class="arch-node node-viz"><svg class="ico"><use href="#i-chart"/></svg> Analytics</div>
         </div>
       </div>
       <div class="arch-status"><span class="status-dot"></span> Architecture online</div>
@@ -120,14 +145,14 @@
         <p>My work focuses on building end-to-end cloud architectures aligned to the <span class="hl-aws">AWS Well-Architected Framework</span> — covering cloud strategy, large-scale migrations, high availability, modern <span class="hl-snow">data lakehouse platforms</span>, and <span class="hl-ai">AI/GenAI enablement on AWS</span>.</p>
         <p>I'm AWS Certified Solutions Architect – Professional, with additional certifications across <span class="hl-db">Databricks</span>, Snowflake, and GenAI. I enjoy working at the intersection of cloud engineering, data architecture, and AI innovation.</p>
         <div class="about-chips">
-          <span class="chip">☁️ AWS Well-Architected</span>
-          <span class="chip">🏗️ Medallion Architecture</span>
-          <span class="chip">🤖 Amazon Bedrock / GenAI</span>
-          <span class="chip">❄️ Snowflake</span>
-          <span class="chip">⚡ Databricks</span>
-          <span class="chip">🔄 Data Modernization</span>
-          <span class="chip">🧠 MLOps / Agentic AI</span>
-          <span class="chip">🎤 Tech Speaker</span>
+          <span class="chip"><svg class="ico"><use href="#i-cloud"/></svg> AWS Well-Architected</span>
+          <span class="chip"><svg class="ico"><use href="#i-layers"/></svg> Medallion Architecture</span>
+          <span class="chip"><svg class="ico"><use href="#i-bot"/></svg> Amazon Bedrock / GenAI</span>
+          <span class="chip"><svg class="ico"><use href="#i-snow"/></svg> Snowflake</span>
+          <span class="chip"><svg class="ico"><use href="#i-zap"/></svg> Databricks</span>
+          <span class="chip"><svg class="ico"><use href="#i-refresh"/></svg> Data Modernization</span>
+          <span class="chip"><svg class="ico"><use href="#i-cpu"/></svg> MLOps / Agentic AI</span>
+          <span class="chip"><svg class="ico"><use href="#i-mic"/></svg> Tech Speaker</span>
         </div>
       </div>
       <div class="about-visual">
@@ -137,9 +162,9 @@
           <div class="orbit-ring r3"></div>
           <div class="avatar-core"><span>GK</span></div>
           <div class="orbit-icon oi-1">AWS</div>
-          <div class="orbit-icon oi-2">❄️</div>
-          <div class="orbit-icon oi-3">⚡</div>
-          <div class="orbit-icon oi-4">🤖</div>
+          <div class="orbit-icon oi-2"><svg class="ico"><use href="#i-snow"/></svg></div>
+          <div class="orbit-icon oi-3"><svg class="ico"><use href="#i-zap"/></svg></div>
+          <div class="orbit-icon oi-4"><svg class="ico"><use href="#i-bot"/></svg></div>
         </div>
         <div class="about-company">
           <div class="company-label">Currently at</div>
@@ -255,7 +280,7 @@
 
     <div class="skills-domains">
       <div class="domain-card">
-        <div class="domain-icon">☁️</div>
+        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
         <h3>Cloud Architecture</h3>
         <div class="domain-bars">
           <div class="dbar"><span>AWS (S3, Glue, Redshift, Lambda, Athena)</span><div class="bar-track"><div class="bar-fill" data-w="95"></div></div><em>95%</em></div>
@@ -265,7 +290,7 @@
         </div>
       </div>
       <div class="domain-card">
-        <div class="domain-icon">🏗️</div>
+        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-layers"/></svg></div>
         <h3>Data Platforms</h3>
         <div class="domain-bars">
           <div class="dbar"><span>Databricks / Delta Lake</span><div class="bar-track"><div class="bar-fill" data-w="93"></div></div><em>93%</em></div>
@@ -275,7 +300,7 @@
         </div>
       </div>
       <div class="domain-card">
-        <div class="domain-icon">🤖</div>
+        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-bot"/></svg></div>
         <h3>AI &amp; GenAI</h3>
         <div class="domain-bars">
           <div class="dbar"><span>Amazon Bedrock</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><em>88%</em></div>
@@ -285,7 +310,7 @@
         </div>
       </div>
       <div class="domain-card">
-        <div class="domain-icon">⚙️</div>
+        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-cog"/></svg></div>
         <h3>Data Engineering</h3>
         <div class="domain-bars">
           <div class="dbar"><span>PySpark / SparkSQL</span><div class="bar-track"><div class="bar-fill" data-w="93"></div></div><em>93%</em></div>
@@ -295,7 +320,7 @@
         </div>
       </div>
       <div class="domain-card">
-        <div class="domain-icon">🎨</div>
+        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-palette"/></svg></div>
         <h3>Web Design &amp; Frontend</h3>
         <div class="domain-bars">
           <div class="dbar"><span>Three.js / WebGL / React Three Fiber</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div><em>82%</em></div>
@@ -308,15 +333,15 @@
 
     <div class="stack-grid">
       <div class="stack-item" style="--c:#ff9900"><div class="si-logo">AWS</div><div class="si-name">Amazon Web Services</div></div>
-      <div class="stack-item" style="--c:#29b5e8"><div class="si-logo">❄️</div><div class="si-name">Snowflake</div></div>
-      <div class="stack-item" style="--c:#ff3621"><div class="si-logo">⚡</div><div class="si-name">Databricks</div></div>
-      <div class="stack-item" style="--c:#e4532a"><div class="si-logo">🔥</div><div class="si-name">PySpark</div></div>
-      <div class="stack-item" style="--c:#ff8c00"><div class="si-logo">△</div><div class="si-name">Delta Lake</div></div>
+      <div class="stack-item" style="--c:#29b5e8"><div class="si-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div><div class="si-name">Snowflake</div></div>
+      <div class="stack-item" style="--c:#ff3621"><div class="si-logo"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div><div class="si-name">Databricks</div></div>
+      <div class="stack-item" style="--c:#e4532a"><div class="si-logo">Spk</div><div class="si-name">PySpark</div></div>
+      <div class="stack-item" style="--c:#ff8c00"><div class="si-logo">Δ</div><div class="si-name">Delta Lake</div></div>
       <div class="stack-item" style="--c:#3776ab"><div class="si-logo">Py</div><div class="si-name">Python</div></div>
       <div class="stack-item" style="--c:#00f5ff"><div class="si-logo">SQL</div><div class="si-name">Advanced SQL</div></div>
-      <div class="stack-item" style="--c:#8338ec"><div class="si-logo">🤖</div><div class="si-name">Amazon Bedrock</div></div>
+      <div class="stack-item" style="--c:#8338ec"><div class="si-logo"><svg class="ico ico-lg"><use href="#i-bot"/></svg></div><div class="si-name">Amazon Bedrock</div></div>
       <div class="stack-item" style="--c:#ff9900"><div class="si-logo">RS</div><div class="si-name">AWS Redshift</div></div>
-      <div class="stack-item" style="--c:#2496ed"><div class="si-logo">🔗</div><div class="si-name">AWS Glue</div></div>
+      <div class="stack-item" style="--c:#2496ed"><div class="si-logo">Glu</div><div class="si-name">AWS Glue</div></div>
       <div class="stack-item" style="--c:#f05032"><div class="si-logo">λ</div><div class="si-name">AWS Lambda</div></div>
       <div class="stack-item" style="--c:#017cee"><div class="si-logo">MCP</div><div class="si-name">Agentic / MCP</div></div>
       <div class="stack-item" style="--c:#e53e3e"><div class="si-logo">R3F</div><div class="si-name">React Three Fiber</div></div>
@@ -340,19 +365,19 @@
 
     <!-- AWS CERTS -->
     <div class="cert-group">
-      <div class="cert-group-label" style="--gc:#ff9900">☁️ Amazon Web Services</div>
+      <div class="cert-group-label" style="--gc:#ff9900"><svg class="ico ico-lg"><use href="#i-cloud"/></svg> Amazon Web Services</div>
       <div class="cert-row">
 
         <div class="cert-full-card" style="--ac:#ff9900">
           <div class="cfc-top">
             <div class="cfc-logo">AWS</div>
-            <div class="cfc-badge">⭐ PROFESSIONAL</div>
+            <div class="cfc-badge">PROFESSIONAL</div>
           </div>
           <div class="cfc-name">AWS Certified Solutions Architect</div>
           <div class="cfc-sub">AWS Solutions Architect Professional</div>
           <div class="cfc-meta">
-            <span>📅 Feb 2026</span>
-            <span>⏳ Expires Feb 2029</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Feb 2029</span>
             <span class="cfc-id">ID: 8039b369-0326-40dd-90f7-10abd33c474a</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -366,8 +391,8 @@
           <div class="cfc-name">AWS Certified Data Analytics – Specialty</div>
           <div class="cfc-sub">Analytics · Kinesis · Glue · Redshift · Lake Formation</div>
           <div class="cfc-meta">
-            <span>📅 Nov 2023</span>
-            <span>⏳ Expires Nov 2026</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Nov 2023</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Nov 2026</span>
             <span class="cfc-id">ID: VH9PJHJ2XNFEQZC2</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -378,19 +403,19 @@
 
     <!-- DATABRICKS CERTS -->
     <div class="cert-group">
-      <div class="cert-group-label" style="--gc:#ff3621">⚡ Databricks</div>
+      <div class="cert-group-label" style="--gc:#ff3621"><svg class="ico ico-lg"><use href="#i-zap"/></svg> Databricks</div>
       <div class="cert-row">
 
         <div class="cert-full-card" style="--ac:#ff3621">
           <div class="cfc-top">
             <div class="cfc-logo">DB</div>
-            <div class="cfc-badge">⭐ PROFESSIONAL</div>
+            <div class="cfc-badge">PROFESSIONAL</div>
           </div>
           <div class="cfc-name">Databricks Certified Data Engineer Professional</div>
           <div class="cfc-sub">Delta Lake · MLflow · Production Pipelines · PySpark</div>
           <div class="cfc-meta">
-            <span>📅 Feb 2026</span>
-            <span>⏳ Expires Feb 2028</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Feb 2028</span>
             <span class="cfc-id">ID: 173730929</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -404,8 +429,8 @@
           <div class="cfc-name">Databricks Certified Data Engineer Associate</div>
           <div class="cfc-sub">Spark · Delta Lake · Data Engineering Fundamentals</div>
           <div class="cfc-meta">
-            <span>📅 Feb 2023</span>
-            <span>⏳ Expires Feb 2025</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2023</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Feb 2025</span>
             <span class="cfc-id">ID: 68533427</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -413,14 +438,14 @@
 
         <div class="cert-full-card" style="--ac:#8338ec">
           <div class="cfc-top">
-            <div class="cfc-logo">🤖</div>
+            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-bot"/></svg></div>
             <div class="cfc-badge">ACCREDITATION</div>
           </div>
           <div class="cfc-name">Academy Accreditation – Generative AI Fundamentals</div>
           <div class="cfc-sub">LLMs · Prompt Engineering · RAG · Responsible AI</div>
           <div class="cfc-meta">
-            <span>📅 Mar 2024</span>
-            <span>⏳ Expires Mar 2026</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Mar 2024</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Mar 2026</span>
             <span class="cfc-id">ID: 96789627</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -434,8 +459,8 @@
           <div class="cfc-name">Partner Training – Advantages of Expanding EDW with Data Intelligence</div>
           <div class="cfc-sub">Enterprise Data Warehouse · Lakehouse Migration</div>
           <div class="cfc-meta">
-            <span>📅 Feb 2026</span>
-            <span>⏳ Expires Feb 2028</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Feb 2028</span>
             <span class="cfc-id">ID: 173508953</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -449,8 +474,8 @@
           <div class="cfc-name">Partner Training – Advantages of Data &amp; AI Governance</div>
           <div class="cfc-sub">Unity Catalog · Data Governance · Security · Compliance</div>
           <div class="cfc-meta">
-            <span>📅 Feb 2026</span>
-            <span>⏳ Expires Feb 2028</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Feb 2028</span>
             <span class="cfc-id">ID: 173508735</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
@@ -464,8 +489,8 @@
           <div class="cfc-name">Databricks Lakehouse Fundamentals</div>
           <div class="cfc-sub">Lakehouse Architecture · Delta Lake · Databricks Platform</div>
           <div class="cfc-meta">
-            <span>📅 Sep 2023</span>
-            <span>⏳ Expires Sep 2024</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Sep 2023</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Sep 2024</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
         </div>
@@ -475,47 +500,47 @@
 
     <!-- SNOWFLAKE CERTS -->
     <div class="cert-group">
-      <div class="cert-group-label" style="--gc:#29b5e8">❄️ Snowflake</div>
+      <div class="cert-group-label" style="--gc:#29b5e8"><svg class="ico ico-lg"><use href="#i-snow"/></svg> Snowflake</div>
       <div class="cert-row">
 
         <div class="cert-full-card" style="--ac:#29b5e8">
           <div class="cfc-top">
-            <div class="cfc-logo">❄️</div>
-            <div class="cfc-badge">⭐ CORE CERT</div>
+            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
+            <div class="cfc-badge">CORE CERT</div>
           </div>
           <div class="cfc-name">SnowPro Core Certification</div>
           <div class="cfc-sub">Data Warehousing · Virtual Warehouses · Snowpark · Time Travel</div>
           <div class="cfc-meta">
-            <span>📅 Jul 2022</span>
-            <span>⏳ Expires Jun 2024</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Jul 2022</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Jun 2024</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
         </div>
 
         <div class="cert-full-card" style="--ac:#29b5e8">
           <div class="cfc-top">
-            <div class="cfc-logo">❄️</div>
+            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
             <div class="cfc-badge">TECHNICAL SALES</div>
           </div>
           <div class="cfc-name">Snowflake Technical Sales Professional Accreditation</div>
           <div class="cfc-sub">Technical Architecture · Pre-Sales · Solution Design</div>
           <div class="cfc-meta">
-            <span>📅 Jul 2022</span>
-            <span>⏳ Expires Jul 2024</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Jul 2022</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Jul 2024</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
         </div>
 
         <div class="cert-full-card" style="--ac:#29b5e8">
           <div class="cfc-top">
-            <div class="cfc-logo">❄️</div>
+            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
             <div class="cfc-badge">SALES PRO</div>
           </div>
           <div class="cfc-name">Snowflake Sales Professional Accreditation</div>
           <div class="cfc-sub">Snowflake Platform · Business Value · Sales Methodology</div>
           <div class="cfc-meta">
-            <span>📅 Aug 2023</span>
-            <span>⏳ Expires Aug 2025</span>
+            <span><svg class="ico"><use href="#i-calendar"/></svg>Aug 2023</span>
+            <span><svg class="ico"><use href="#i-clock"/></svg>Expires Aug 2025</span>
           </div>
           <div class="cfc-verify">✓ VERIFIED</div>
         </div>
@@ -536,7 +561,7 @@
       <div class="proj-hero-card">
         <div class="phc-glow"></div>
         <div class="phc-top">
-          <span class="phc-icon">🏗️</span>
+          <span class="phc-icon"><svg class="ico ico-xl"><use href="#i-layers"/></svg></span>
           <div class="phc-links">
             <a href="https://github.com/geodelab" target="_blank">GitHub ↗</a>
           </div>
@@ -556,7 +581,7 @@
       <div class="proj-grid">
 
         <div class="proj-sm-card">
-          <div class="psc-icon">🤖</div>
+          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-bot"/></svg></div>
           <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
           <div class="psc-tag">GenAI · Agentic AI</div>
           <h4>Agentic AI Platform with MCP</h4>
@@ -565,7 +590,7 @@
         </div>
 
         <div class="proj-sm-card">
-          <div class="psc-icon">⚡</div>
+          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div>
           <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
           <div class="psc-tag">Databricks · MLOps</div>
           <h4>MLOps Pipeline on Databricks</h4>
@@ -574,7 +599,7 @@
         </div>
 
         <div class="proj-sm-card">
-          <div class="psc-icon">❄️</div>
+          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
           <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
           <div class="psc-tag">Snowflake · Analytics</div>
           <h4>Snowflake Analytics Hub</h4>
@@ -583,7 +608,7 @@
         </div>
 
         <div class="proj-sm-card origin-card">
-          <div class="psc-icon">🌐</div>
+          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-globe"/></svg></div>
           <div class="psc-links"><a href="https://github.com/geodelab/dynamo-damm-boy.github.io" target="_blank">↗</a></div>
           <div class="psc-tag">Origin · 2019</div>
           <h4>GeoDE Lab — Dynamo Damm Boy</h4>
@@ -603,21 +628,21 @@
     <h2 class="sec-title">Sharing <span class="grad-text">Knowledge</span></h2>
     <div class="speaking-grid">
       <div class="speak-card speak-featured">
-        <div class="speak-icon">🎤</div>
+        <div class="speak-icon"><svg class="ico ico-xl"><use href="#i-mic"/></svg></div>
         <div class="speak-type">Technical Talk</div>
         <h3>Generative AI on AWS — Bedrock, Agents &amp; MCP</h3>
         <p>Deep dive into architecting production-grade GenAI solutions on AWS — covering Amazon Bedrock, agentic workflows with Model Context Protocol, and real-world enterprise deployment patterns.</p>
         <div class="speak-tags"><span>Amazon Bedrock</span><span>Agentic AI</span><span>MCP</span><span>AWS</span></div>
       </div>
       <div class="speak-card">
-        <div class="speak-icon">🏗️</div>
+        <div class="speak-icon"><svg class="ico ico-xl"><use href="#i-layers"/></svg></div>
         <div class="speak-type">Workshop</div>
         <h3>Medallion Architecture with Databricks</h3>
         <p>Hands-on workshop on implementing Bronze/Silver/Gold Medallion architecture with Databricks Delta Lake — covering data quality, governance, and performance optimisation.</p>
         <div class="speak-tags"><span>Databricks</span><span>Delta Lake</span><span>Medallion</span><span>PySpark</span></div>
       </div>
       <div class="speak-card">
-        <div class="speak-icon">☁️</div>
+        <div class="speak-icon"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
         <div class="speak-type">Community Talk</div>
         <h3>AWS Data Platform Design Patterns</h3>
         <p>Architecture discussion on cost-optimised, scalable data platforms on AWS — covering common anti-patterns across Glue, Redshift, Lake Formation and proven enterprise design approaches.</p>
@@ -633,7 +658,7 @@
     <div class="sec-label"><span class="c-cyan">07.</span> Education</div>
     <h2 class="sec-title">Academic <span class="grad-text">Foundation</span></h2>
     <div class="edu-card">
-      <div class="edu-icon">🎓</div>
+      <div class="edu-icon"><svg class="ico ico-xl"><use href="#i-cap"/></svg></div>
       <div class="edu-body">
         <div class="edu-degree">Bachelor of Engineering — Computer Science</div>
         <div class="edu-school">DMI College of Engineering</div>
@@ -653,23 +678,23 @@
       <p class="contact-lead">Whether you're looking for a Solutions Architect, want to discuss data platform strategy, or geek out about GenAI on AWS — I'm always open to a great conversation.</p>
       <div class="contact-cards">
         <a href="mailto:ganesh.data.expert@gmail.com" class="ccard">
-          <div class="ccard-icon">✉️</div>
+          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-mail"/></svg></div>
           <div><div class="ccard-lbl">Email</div><div class="ccard-val">ganesh.data.expert@gmail.com</div></div>
         </a>
         <a href="https://www.linkedin.com/in/ganesh-kumar-ponraj/" target="_blank" class="ccard">
-          <div class="ccard-icon">💼</div>
+          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-linkedin"/></svg></div>
           <div><div class="ccard-lbl">LinkedIn</div><div class="ccard-val">ganeshkumar-ponraj</div></div>
         </a>
         <a href="https://github.com/geodelab" target="_blank" class="ccard">
-          <div class="ccard-icon">🐙</div>
+          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-github"/></svg></div>
           <div><div class="ccard-lbl">GitHub</div><div class="ccard-val">github.com/geodelab</div></div>
         </a>
         <a href="tel:+917358182958" class="ccard">
-          <div class="ccard-icon">📱</div>
+          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div>
           <div><div class="ccard-lbl">Phone</div><div class="ccard-val">+91 73581 82958</div></div>
         </a>
       </div>
-      <a href="mailto:ganesh.data.expert@gmail.com" class="btn-glow btn-xl">Say Hello 👋</a>
+      <a href="mailto:ganesh.data.expert@gmail.com" class="btn-glow btn-xl">Say Hello</a>
     </div>
   </div>
 </section>
@@ -683,6 +708,10 @@
   </div>
 </footer>
 
+<script type="importmap">
+{ "imports": { "three": "./js/vendor/three.module.js" } }
+</script>
+<script type="module" src="js/hero3d.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
