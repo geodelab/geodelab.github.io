@@ -36,15 +36,18 @@ uniform float uSoft;
 uniform float uTime;
 uniform vec2 uRes;
 uniform vec2 uImg;
-uniform float uShiftX;
+uniform float uCenterX;
+uniform float uScale;
 
 void main(){
-  vec2 ratio = vec2(
-    min((uRes.x/uRes.y)/(uImg.x/uImg.y), 1.0),
-    min((uRes.y/uRes.x)/(uImg.y/uImg.x), 1.0)
-  );
-  vec2 uv = (vUv - 0.5) * ratio + 0.5;
-  uv.x -= uShiftX;                       // push subject toward the right
+  // FIT BY HEIGHT so the full head-and-shoulders is always visible,
+  // then place the portrait horizontally at uCenterX (right side on desktop).
+  float wFrac = (uImg.x/uImg.y) / (uRes.x/uRes.y) * uScale;  // portrait width as fraction of hero width
+  vec2 uv;
+  uv.x = (vUv.x - uCenterX) / wFrac + 0.5;
+  uv.y = 1.0 - ((1.0 - vUv.y) / uScale);                     // full height (anchored top), uScale zoom
+
+  float inside = step(0.0, uv.x) * step(uv.x, 1.0) * step(0.0, uv.y) * step(uv.y, 1.0);
 
   vec3 real = texture2D(uTex, uv).rgb;
   float lum = dot(real, vec3(0.299,0.587,0.114));
@@ -69,7 +72,7 @@ void main(){
   float ring = smoothstep(uSoft, 0.0, abs(dist - r)) * uHover;
   col += vec3(0.18,0.42,0.85) * ring * 0.5;
 
-  gl_FragColor = vec4(col, 1.0);
+  gl_FragColor = vec4(col, inside);
 }
 `;
 
@@ -91,7 +94,8 @@ function init(url) {
     uTime: { value: 0 },
     uRes: { value: new THREE.Vector2(1, 1) },
     uImg: { value: new THREE.Vector2(1, 1) },
-    uShiftX: { value: 0.0 },
+    uCenterX: { value: 0.72 },
+    uScale: { value: 1.0 },
   };
 
   new THREE.TextureLoader().load(url, (tex) => {
@@ -104,7 +108,7 @@ function init(url) {
     canvas.classList.add('ready');
   });
 
-  const mat = new THREE.ShaderMaterial({ vertexShader: vertex, fragmentShader: fragment, uniforms });
+  const mat = new THREE.ShaderMaterial({ vertexShader: vertex, fragmentShader: fragment, uniforms, transparent: true });
   scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), mat));
 
   function resize() {
@@ -112,8 +116,8 @@ function init(url) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(w, h, false);
     uniforms.uRes.value.set(w, h);
-    // wider screens → push subject further right so text stays clear
-    uniforms.uShiftX.value = w > 900 ? 0.2 : 0.0;
+    // place portrait on the right (desktop) or centered (mobile)
+    uniforms.uCenterX.value = w > 900 ? 0.72 : 0.5;
   }
   window.addEventListener('resize', resize); resize();
 
