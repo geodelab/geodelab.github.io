@@ -1056,8 +1056,6 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
 .nav-links a.active { color: var(--cyan); }
 .nav-links a.active .n { color: var(--acc-mag); }
 
-/* depth for 3D card tilts */
-.cert-row, .skills-domains { perspective: 1000px; }
 
 /* ── Section-aware 3D background (one renderer, morphs per section) ── */
 #scene-3d {
