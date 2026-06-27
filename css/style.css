@@ -152,12 +152,20 @@ body {
 }
 #hero-reveal.ready { opacity: 1; }
 
-/* gradient scrim so the left-side text stays readable over the photo */
+/* soft radial halo behind the subject (blends, no hard panel) */
+#hero::after {
+  content: ''; position: absolute; z-index: 0; pointer-events: none;
+  top: 18%; right: 6%; width: 46%; height: 78%;
+  background: radial-gradient(ellipse at 60% 45%, rgba(99,102,241,0.22) 0%, rgba(56,40,140,0.12) 38%, transparent 70%);
+  filter: blur(20px);
+}
+
+/* gradient scrim so the left-side text stays readable, fades to transparent on the right */
 .hero-scrim {
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
   background:
-    linear-gradient(90deg, var(--bg) 0%, rgba(8,8,12,0.92) 26%, rgba(8,8,12,0.55) 48%, rgba(8,8,12,0.0) 72%),
-    linear-gradient(0deg, var(--bg) 2%, transparent 28%);
+    linear-gradient(90deg, var(--bg) 0%, rgba(8,8,12,0.85) 24%, rgba(8,8,12,0.35) 46%, rgba(8,8,12,0.0) 66%),
+    linear-gradient(0deg, var(--bg) 1%, transparent 22%);
 }
 
 .hero-badge {

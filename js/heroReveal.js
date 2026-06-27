@@ -49,7 +49,8 @@ void main(){
 
   float inside = step(0.0, uv.x) * step(uv.x, 1.0) * step(0.0, uv.y) * step(uv.y, 1.0);
 
-  vec3 real = texture2D(uTex, uv).rgb;
+  vec4 texc = texture2D(uTex, uv);
+  vec3 real = texc.rgb;
   float lum = dot(real, vec3(0.299,0.587,0.114));
 
   // base: clean cinematic — slightly cooler, gently dimmed (still looks good)
@@ -72,7 +73,7 @@ void main(){
   float ring = smoothstep(uSoft, 0.0, abs(dist - r)) * uHover;
   col += vec3(0.18,0.42,0.85) * ring * 0.5;
 
-  gl_FragColor = vec4(col, inside);
+  gl_FragColor = vec4(col, inside * texc.a);
 }
 `;
 
