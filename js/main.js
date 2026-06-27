@@ -172,49 +172,7 @@
   fills.forEach(f => obs.observe(f));
 })();
 
-/* ── TIMELINE CARDS REVEAL ── */
-(function () {
-  const items = document.querySelectorAll('.tl-item');
-  items.forEach((item, i) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(24px)';
-    item.style.transition = `opacity 0.6s ${i * 0.12}s, transform 0.6s ${i * 0.12}s`;
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  items.forEach(item => obs.observe(item));
-})();
-
-/* ── SECTION FADE-IN ── */
-(function () {
-  const sections = document.querySelectorAll('section:not(#hero)');
-  sections.forEach(s => {
-    s.style.opacity = '0';
-    s.style.transform = 'translateY(16px)';
-    s.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-
-  sections.forEach(s => obs.observe(s));
-})();
+/* ── (Timeline & section reveals are handled by GSAP ScrollTrigger in scroll.js) ── */
 
 /* ── CURSOR GLOW (desktop) ── */
 (function () {
@@ -250,10 +208,4 @@ document.querySelectorAll('.cert-card-sm').forEach(card => {
   card.addEventListener('mouseleave', () => { card.style.boxShadow = ''; });
 });
 
-/* ── SMOOTH SCROLL ── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
+/* ── (Smooth anchor scrolling handled by Lenis in scroll.js) ── */

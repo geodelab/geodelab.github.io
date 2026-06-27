@@ -1044,6 +1044,21 @@ footer p { font-family: var(--ff-mono); font-size: 0.78rem; color: var(--gray); 
 }
 #hero-3d { transition: opacity 0.6s ease; }
 
+/* ── Scroll progress bar ── */
+#scrollProgress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 300;
+  transform: scaleX(0); transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--acc-cyan), var(--cyan), var(--acc-mag));
+  box-shadow: 0 0 12px rgba(99,102,241,0.6);
+}
+
+/* ── Active nav link ── */
+.nav-links a.active { color: var(--cyan); }
+.nav-links a.active .n { color: var(--acc-mag); }
+
+/* depth for 3D card tilts */
+.cert-row, .skills-domains { perspective: 1000px; }
+
 /* ── Section-aware 3D background (one renderer, morphs per section) ── */
 #scene-3d {
   position: fixed; inset: 0; width: 100vw; height: 100vh;
