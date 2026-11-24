@@ -5,13 +5,9 @@
 ---
 
 ## Who I Am
-
-I'm **Ganesh Kumar**, a Solutions Architect based in Chennai, India, specialising in AWS cloud architecture, modern data platforms, and Generative AI solutions.
-
-I currently work at **zeb**, where I design and deliver enterprise-grade data and AI systems — from large-scale cloud migrations and data lakehouse architectures to production GenAI applications on Amazon Bedrock.
-
-With over **5 years of experience** across data engineering and cloud architecture, and **10+ certifications** spanning AWS, Databricks, and Snowflake, I bring both technical depth and business clarity to every solution I build.
-
+I'm **Ganesh Kumar P**, a Data Architect at **Aivar Innovations**, based in Chennai, India. I design and build multi-cloud data and AI platforms on **AWS, Azure and Google Cloud**: cloud-native, cross-cloud, multi-cloud and cloud-agnostic designs, lift-and-shift and refactor migrations, and greenfield builds.
+I stay hands-on across the full path from raw data to AI in production: ingestion and streaming, lakehouses on Databricks and Snowflake, governance and cost control, and GenAI and agent systems.
+With **5+ years** in data engineering and architecture and **12 credentials** across AWS, Databricks and Snowflake, I also write on AWS Builder Center and maintain open-source tools such as [data-agent-gauntlet](https://github.com/geodelab/data-agent-gauntlet).
 ---
 
 ## What This Portfolio Is
@@ -20,10 +16,11 @@ This portfolio is a direct reflection of my work, skills, and professional journ
 
 It covers:
 
-- **My experience** — from Trainee Data Engineer to Solutions Architect, with the real work behind each role
+- **My practice** — how I work across clouds, and a service map of AWS, Azure, Google Cloud and cross-cloud equivalents
+- **My experience** — from Trainee Data Engineer to Data Architect, with the real work behind each role
 - **My certifications** — every AWS, Databricks, and Snowflake credential, with dates and IDs
-- **My projects** — real architectures and systems I've designed and shipped
-- **My skills** — the tools and platforms I work with daily, not just listed but demonstrated
+- **My work** — generalized client architectures, plus open-source projects and benchmarks
+- **My writing and community** — AWS Builder Center articles, AWS, Azure and Apache Doris community work
 - **My talks** — knowledge sharing through technical sessions and community events
 
 Whether you're a potential employer, a client evaluating an architect, or a fellow engineer looking to connect — this site is built for you.
@@ -31,13 +28,14 @@ Whether you're a potential employer, a client evaluating an architect, or a fell
 ---
 
 ## Tech Stack of This Site
-Plain HTML, CSS and JavaScript with no build step and no runtime dependencies. Deployed on GitHub Pages from `main`.
+Plain HTML, CSS and JavaScript with no build step and no runtime dependencies. Design concept: "雲 KUMO // OPS", an operations console framed as anime episode title cards, with a working mini terminal (press `/` or `` ` `` on the page). Deployed on GitHub Pages from `main`.
 ```
-├── index.html          ← all content, SEO meta, Open Graph, JSON-LD (schema.org Person)
-├── css/style.css       ← theme and layout
-├── js/main.js          ← nav, scroll reveals, counters, certification filter
+├── index.html          ← all content, SEO meta, Open Graph, JSON-LD (schema.org Person), tritone SVG filter
+├── css/style.css       ← theme, layout, portrait treatment, motion (respects prefers-reduced-motion)
+├── js/main.js          ← console commands, reveals, nav state, cloud-map crosshair, cert filter, copy email
 ├── assets/
-│   ├── portrait.webp   ← hero photo (optimized from portrait.png)
+│   ├── portrait.webp   ← hero photo (transparent cutout, colour-treated in CSS)
+│   ├── portrait.png    ← original photo (not loaded by the site)
 │   ├── og-image.png    ← 1200×630 social share card
 │   └── favicon.svg
 ├── robots.txt, sitemap.xml, 404.html
