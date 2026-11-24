@@ -64,6 +64,7 @@
     const cell = $$('tbody td', table).find((c) => c.textContent.toLowerCase().includes(q));
     if (!cell) return '';
     cross(cell); cell.classList.add('hit');
+    clearTimeout(highlightMatrix.t); highlightMatrix.t = setTimeout(clearX, 5000);
     cell.scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'center', inline: 'center' });
     const row = cell.parentElement;
     const head = $$('thead th', table).map((h) => h.textContent);
@@ -119,15 +120,15 @@
     whoami: () => 'Ganesh Kumar P. Data Architect at Aivar Innovations, Bangalore.\nMulti-cloud data and AI on AWS, Azure and Google Cloud.\n5+ years: lakehouses, streaming, migrations, greenfield builds, GenAI.',
     clouds: () => 'aws    azure    google cloud\nlakehouse & warehouse: databricks  snowflake\nmodes: cloud-native  cross-cloud  multi-cloud  cloud-agnostic\n       migrations (lift-and-shift, refactor)  greenfield\ntry: compare bigquery',
     compare: (q) => (q ? highlightMatrix(q) || `no match for "${q}". try: redshift, bigquery, kinesis, purview` : 'usage: compare <service>   e.g. compare redshift'),
-    projects: () => (go('work'), 'CASE 01  Cloud-native lakehouse on AWS + Databricks\nCASE 02  Agentic AI platform with MCP\nCASE 03  MLOps pipeline on Databricks\nCASE 04  Snowflake analytics hub'),
-    gauntlet: () => (go('oss'), 'data-agent-gauntlet v0.1.1 · Apache-2.0\n20 tasks on Amazon Redshift Serverless, graded by the warehouse.\nbaseline arm vs skills arm · Claude Code and Kiro CLI\ngithub.com/geodelab/data-agent-gauntlet'),
-    community: () => (go('community'), 'AWS communities   speaker, mentor, Builder Center author\nAzure community   talks and participation\nApache Doris      testing and benchmarking'),
-    certs: () => (go('certs'), '12 credentials · AWS 3 · Databricks 6 · Snowflake 3\nincl. AWS Solutions Architect – Professional,\n     Databricks Data Engineer Professional, SnowPro Core'),
-    talks: () => (go('talks'), '4 sessions on sessionize.com/ganesh-kumar\nAWS Student Community Day Mysuru 2026 · 21 Nov 2026 · AI/ML track'),
-    contact: () => (go('contact'), CONTACT),
-    goto: (s) => { const id = SECTIONS[s] || (/^\d+$/.test(s) && EP[+s]); return id ? go(id) : 'usage: goto <section|ep>   e.g. goto talks, goto 4'; },
+    projects: () => ('CASE 01  Cloud-native lakehouse on AWS + Databricks\nCASE 02  Agentic AI platform with MCP\nCASE 03  MLOps pipeline on Databricks\nCASE 04  Snowflake analytics hub\n→ goto work'),
+    gauntlet: () => ('data-agent-gauntlet v0.1.1 · Apache-2.0\n20 tasks on Amazon Redshift Serverless, graded by the warehouse.\nbaseline arm vs skills arm · Claude Code and Kiro CLI\ngithub.com/geodelab/data-agent-gauntlet\n→ goto oss'),
+    community: () => ('AWS communities   speaker, mentor, Builder Center author\nAzure community   talks and participation\nApache Doris      testing and benchmarking\n→ goto community'),
+    certs: () => ('12 credentials · AWS 3 · Databricks 6 · Snowflake 3\nincl. AWS Solutions Architect – Professional,\n     Databricks Data Engineer Professional, SnowPro Core\n→ goto certs'),
+    talks: () => ('4 sessions on sessionize.com/ganesh-kumar\nAWS Student Community Day Mysuru 2026 · 21 Nov 2026 · AI/ML track\n→ goto talks'),
+    contact: () => CONTACT,
+    goto: (s) => { const id = (Object.hasOwn(SECTIONS, s) && SECTIONS[s]) || (/^\d+$/.test(s) && EP[+s]); return id ? go(id) : 'usage: goto <section|ep>   e.g. goto talks, goto 4'; },
     clear: () => { log.replaceChildren(); return ''; },
-    sudo: (a) => (a === 'hire ganesh' ? (go('contact'), '[sudo] access granted.\n' + CONTACT) : 'sudo: permission denied'),
+    sudo: (a) => (a === 'hire ganesh' ? '[sudo] access granted.\n' + CONTACT : 'sudo: permission denied'),
   };
   const NAMES = Object.keys(COMMANDS).filter((k) => k !== 'sudo');
 

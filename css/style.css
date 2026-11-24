@@ -502,3 +502,15 @@ details > p { margin-top: 12px; color: #2B2A26; font-size: 1rem; max-width: 64ch
   .bars__row { grid-template-columns: 1fr; gap: 4px; }
   .bars__v::before { width: calc(var(--w) * (100% - 5.5em)); }
 }
+
+/* ---- validation fixes ---- */
+.matrix caption { position: sticky; left: 0; }
+@media (max-width: 899px) {
+  .hero__kana { display: none; }
+  .speedlines { inset: 0 -40% -5%; }
+}
+@media (max-width: 599px) {
+  .hero__links a, .channels a, .end__meta .textlink { display: inline-block; padding-block: 8px; }
+  .hero__links { gap: 0 20px; margin-top: 14px; }
+}
+.mono-mark { display: inline-block; padding-block: 10px; }
