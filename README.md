@@ -5,10 +5,13 @@
 ---
 
 ## Who I Am
-I'm **Ganesh Kumar P**, a Data Architect at **Aivar Innovations**, based in Chennai, India. I design and build multi-cloud data and AI platforms on **AWS, Azure and Google Cloud**: cloud-native, cross-cloud, multi-cloud and cloud-agnostic designs, lift-and-shift and refactor migrations, and greenfield builds.
+
+I'm Ganesh Kumar P, a Data Architect at Aivar Innovations, based in Bangalore, India. I design and build multi-cloud data and AI platforms on AWS, Azure and Google Cloud: cloud-native, cross-cloud, multi-cloud and cloud-agnostic designs, lift-and-shift and refactor migrations, and greenfield builds.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 I stay hands-on across the full path from raw data to AI in production: ingestion and streaming, lakehouses on Databricks and Snowflake, governance and cost control, and GenAI and agent systems.
-With **5+ years** in data engineering and architecture and **12 credentials** across AWS, Databricks and Snowflake, I also write on AWS Builder Center and maintain open-source tools such as [data-agent-gauntlet](https://github.com/geodelab/data-agent-gauntlet).
----
+
+With 5+ years in data engineering and architecture and 12 credentials across AWS, Databricks and Snowflake, I also write on AWS Builder Center and maintain open-source tools such as data-agent-gauntlet.
 
 ## What This Portfolio Is
 
@@ -28,7 +31,9 @@ Whether you're a potential employer, a client evaluating an architect, or a fell
 ---
 
 ## Tech Stack of This Site
+
 Plain HTML, CSS and JavaScript with no build step and no runtime dependencies. Design concept: "雲 KUMO // OPS", an operations console framed as anime episode title cards, with a working mini terminal (press `/` or `` ` `` on the page). Deployed on GitHub Pages from `main`.
+
 ```
 ├── index.html          ← all content, SEO meta, Open Graph, JSON-LD (schema.org Person), tritone SVG filter
 ├── css/style.css       ← theme, layout, portrait treatment, motion (respects prefers-reduced-motion)
@@ -40,8 +45,10 @@ Plain HTML, CSS and JavaScript with no build step and no runtime dependencies. D
 │   └── favicon.svg
 ├── robots.txt, sitemap.xml, 404.html
 ```
+
 To preview locally: `python3 -m http.server` and open http://localhost:8000.
----
+----------------------------------------------------
+
 ## Contact
 
 - **Email:** ganesh.data.expert@gmail.com

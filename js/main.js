@@ -116,7 +116,7 @@
   const CONTACT = 'email     ganesh.data.expert@gmail.com\nphone     +91 73581 82958\nlinkedin  linkedin.com/in/ganesh-kumar-ponraj\ngithub    github.com/geodelab\ntz        IST, UTC+5:30';
   const COMMANDS = {
     help: () => 'whoami  clouds  compare <svc>  projects  gauntlet  community\ncerts  talks  contact  goto <section>  clear\n\ngoto: start practice map work oss writing community talks career certs contact, or 0-10',
-    whoami: () => 'Ganesh Kumar P. Data Architect at Aivar Innovations, Chennai.\nMulti-cloud data and AI on AWS, Azure and Google Cloud.\n5+ years: lakehouses, streaming, migrations, greenfield builds, GenAI.',
+    whoami: () => 'Ganesh Kumar P. Data Architect at Aivar Innovations, Bangalore.\nMulti-cloud data and AI on AWS, Azure and Google Cloud.\n5+ years: lakehouses, streaming, migrations, greenfield builds, GenAI.',
     clouds: () => 'aws    azure    google cloud\nlakehouse & warehouse: databricks  snowflake\nmodes: cloud-native  cross-cloud  multi-cloud  cloud-agnostic\n       migrations (lift-and-shift, refactor)  greenfield\ntry: compare bigquery',
     compare: (q) => (q ? highlightMatrix(q) || `no match for "${q}". try: redshift, bigquery, kinesis, purview` : 'usage: compare <service>   e.g. compare redshift'),
     projects: () => (go('work'), 'CASE 01  Cloud-native lakehouse on AWS + Databricks\nCASE 02  Agentic AI platform with MCP\nCASE 03  MLOps pipeline on Databricks\nCASE 04  Snowflake analytics hub'),
