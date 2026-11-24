@@ -2,687 +2,565 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ganesh Kumar P | Solutions Architect · AWS · GenAI · Databricks · Snowflake</title>
-  <meta name="description" content="Ganesh Kumar P — Solutions Architect @ Zeb | AWS Data & GenAI Architect | Databricks | Snowflake | Tech Speaker"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ganesh Kumar P · AWS Solutions Architect, Data &amp; Generative AI</title>
+  <meta name="description" content="Ganesh Kumar P is an AWS Certified Solutions Architect – Professional based in Chennai, India. He designs data lakehouse, analytics and generative AI platforms on AWS, Databricks and Snowflake for teams worldwide." />
+  <meta name="author" content="Ganesh Kumar P" />
+  <meta name="theme-color" content="#0a0d14" />
+  <link rel="canonical" href="https://geodelab.github.io/" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / social previews -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Ganesh Kumar P" />
+  <meta property="og:title" content="Ganesh Kumar P · AWS Solutions Architect, Data & Generative AI" />
+  <meta property="og:description" content="Data lakehouse, analytics and GenAI platforms on AWS. AWS Solutions Architect – Professional, Databricks Data Engineer Professional, SnowPro Core." />
+  <meta property="og:url" content="https://geodelab.github.io/" />
+  <meta property="og:image" content="https://geodelab.github.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="profile:first_name" content="Ganesh Kumar" />
+  <meta property="profile:last_name" content="P" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ganesh Kumar P · AWS Solutions Architect, Data & Generative AI" />
+  <meta name="twitter:description" content="Data lakehouse, analytics and GenAI platforms on AWS, Databricks and Snowflake." />
+  <meta name="twitter:image" content="https://geodelab.github.io/assets/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ganesh Kumar P",
+    "alternateName": "Ganesh Kumar Ponraj",
+    "url": "https://geodelab.github.io/",
+    "image": "https://geodelab.github.io/assets/portrait.webp",
+    "jobTitle": "Solutions Architect",
+    "worksFor": { "@type": "Organization", "name": "Zeb AI Pvt Ltd" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "DMI College of Engineering" },
+    "email": "mailto:ganesh.data.expert@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/ganesh-kumar-ponraj/",
+      "https://github.com/geodelab"
+    ],
+    "knowsAbout": ["Amazon Web Services", "AWS Well-Architected Framework", "Amazon Bedrock", "Generative AI", "Agentic AI", "Model Context Protocol", "Amazon Redshift", "AWS Glue", "Data Lakehouse", "Databricks", "Snowflake", "Apache Spark", "MLOps"],
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Solutions Architect – Professional", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }, "url": "https://www.credly.com/badges/8039b369-0326-40dd-90f7-10abd33c474a" },
+      { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Machine Learning Engineer – Associate", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" } },
+      { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Data Analytics – Specialty", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" } },
+      { "@type": "EducationalOccupationalCredential", "name": "Databricks Certified Data Engineer Professional", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Databricks" }, "url": "https://credentials.databricks.com/173730929" },
+      { "@type": "EducationalOccupationalCredential", "name": "SnowPro Core Certification", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Snowflake" } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/portrait.webp" type="image/webp" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- ═══ SVG ICON SPRITE (Lucide-style) ═══ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></symbol>
     <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
-    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></symbol>
-    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></symbol>
-    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></symbol>
-    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
-    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></symbol>
-    <symbol id="i-cog" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
-    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="6.5" cy="12.5" r=".8"/><path d="M12 2a10 10 0 1 0 0 20 2.5 2.5 0 0 0 2-4 2.5 2.5 0 0 1 2-4h2a4 4 0 0 0 4-4 10 10 0 0 0-10-8Z"/></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></symbol>
-    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></symbol>
-    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-9h4v1.5"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.18 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
-    <symbol id="i-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2l-5-4.8 7-.9L12 2Z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2L5.8 21 7 14.2 2 9.3l6.9-1Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></symbol>
   </defs>
 </svg>
 
-<div id="scrollProgress"></div>
-<canvas id="bg-canvas"></canvas>
-<div class="aurora">
-  <span class="aurora-blob ab1"></span>
-  <span class="aurora-blob ab2"></span>
-  <span class="aurora-blob ab3"></span>
-</div>
-<div class="noise-overlay"></div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Ganesh Kumar P, home">
+      <span class="brand-mark">GK</span>
+      <span class="brand-name">Ganesh Kumar P</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#expertise">Expertise</a>
+      <a href="#open-source">Open source</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#speaking">Speaking</a>
+    </nav>
+    <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's talk</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#expertise">Expertise</a>
+    <a href="#open-source">Open source</a>
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
 
-<!-- ═══ NAV ═══ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-brand" aria-label="Top">
-    <span class="brand-orb"></span>
-    <span class="brand-word">portfolio</span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about"><span class="n">01</span>About</a></li>
-    <li><a href="#experience"><span class="n">02</span>Experience</a></li>
-    <li><a href="#skills"><span class="n">03</span>Skills</a></li>
-    <li><a href="#certifications"><span class="n">04</span>Certifications</a></li>
-    <li><a href="#projects"><span class="n">05</span>Projects</a></li>
-    <li><a href="#speaking"><span class="n">06</span>Speaking</a></li>
-    <li><a href="#contact" class="nav-hire">Let's Talk</a></li>
-  </ul>
-  <button class="hamburger" id="ham" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<main id="main">
 
 <!-- ═══ HERO ═══ -->
-<section id="hero">
-  <canvas id="hero-reveal"></canvas>
-  <div class="hero-scrim"></div>
-  <div class="hero-left">
-    <div class="hero-badge"><span class="dot-pulse"></span>Available for Architecture Consulting</div>
-    <p class="hero-greeting">Hello, I'm</p>
-    <h1 class="hero-name">
-      <span class="name-first">Ganesh</span>
-      <span class="name-last">Kumar P</span>
-    </h1>
-    <div class="hero-title-row">
-      <span class="title-prefix">//</span>
-      <span id="typewriter" class="typewriter-text"></span>
-      <span class="type-cursor">▮</span>
+<section class="hero" id="top">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="dot"></span>Solutions Architect · Chennai, India · Working with teams worldwide</p>
+      <h1 class="hero-title reveal">
+        I architect <em>data&nbsp;&amp;&nbsp;AI</em> platforms on <span class="aws">AWS</span> that hold up in production.
+      </h1>
+      <p class="hero-sub reveal">
+        Lakehouses, analytics and generative AI on AWS, Databricks and Snowflake.
+        Five years of taking systems from first pipeline to enterprise scale, shaped by the
+        AWS Well-Architected Framework.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#work" class="btn btn-primary">See my work <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/ganesh-kumar-ponraj/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+          <a href="https://github.com/geodelab" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+          <a href="mailto:ganesh.data.expert@gmail.com" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
     </div>
-    <p class="hero-bio">
-      Designing enterprise intelligence at the intersection of
-      <span class="hl-aws">AWS Cloud</span>,
-      <span class="hl-snow">Snowflake</span>,
-      <span class="hl-db">Databricks</span> &amp;
-      <span class="hl-ai">Generative AI</span>
-    </p>
-    <div class="hero-actions">
-      <a href="#experience" class="btn-glow">View My Work <span>→</span></a>
-      <a href="https://www.linkedin.com/in/ganesh-kumar-ponraj/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
-      <a href="https://github.com/geodelab" target="_blank" class="btn-ghost">GitHub ↗</a>
-    </div>
-    <div class="hero-metrics">
-      <div class="metric"><span class="metric-val" data-target="5">0</span>+<span class="metric-lbl">Years Exp</span></div>
-      <div class="metric-sep"></div>
-      <div class="metric"><span class="metric-val" data-target="10">0</span>+<span class="metric-lbl">Certifications</span></div>
-      <div class="metric-sep"></div>
-      <div class="metric"><span class="metric-val" data-target="2">0</span><span class="metric-lbl">Companies</span></div>
+
+    <div class="hero-visual reveal">
+      <div class="portrait-wrap">
+        <div class="portrait-glow" aria-hidden="true"></div>
+        <div class="portrait-ring" aria-hidden="true"></div>
+        <img src="assets/portrait.webp" alt="Portrait of Ganesh Kumar P" width="900" height="1039" class="portrait" fetchpriority="high" />
+        <a class="badge-chip chip-1" href="https://www.credly.com/badges/8039b369-0326-40dd-90f7-10abd33c474a" target="_blank" rel="noopener">
+          <span class="chip-logo aws-logo">aws</span>
+          <span><strong>Solutions Architect</strong><small>Professional · verified</small></span>
+        </a>
+        <div class="badge-chip chip-2">
+          <span class="chip-logo db-logo">DB</span>
+          <span><strong>Data Engineer</strong><small>Databricks Professional</small></span>
+        </div>
+        <div class="badge-chip chip-3">
+          <span class="chip-logo sf-logo">❄</span>
+          <span><strong>SnowPro Core</strong><small>Snowflake</small></span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <a href="#about" class="hero-scroll"><span>scroll</span><div class="scroll-bar"></div></a>
+  <div class="container">
+    <dl class="stats reveal">
+      <div><dt>Years in data &amp; cloud</dt><dd><span data-count="5">5</span>+</dd></div>
+      <div><dt>Certifications</dt><dd><span data-count="12">12</span></dd></div>
+      <div><dt>AWS certifications, incl. Professional</dt><dd><span data-count="3">3</span></dd></div>
+      <div><dt>Open-source projects</dt><dd><span data-count="2">2</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Amazon Bedrock</span><span>Amazon Redshift</span><span>AWS Glue</span><span>Amazon S3</span><span>AWS Lake Formation</span><span>Amazon Kinesis</span><span>AWS Lambda</span><span>AWS Step Functions</span><span>Amazon Athena</span><span>Databricks</span><span>Delta Lake</span><span>Snowflake</span><span>PySpark</span><span>MLflow</span><span>Model Context Protocol</span>
+      <span>Amazon Bedrock</span><span>Amazon Redshift</span><span>AWS Glue</span><span>Amazon S3</span><span>AWS Lake Formation</span><span>Amazon Kinesis</span><span>AWS Lambda</span><span>AWS Step Functions</span><span>Amazon Athena</span><span>Databricks</span><span>Delta Lake</span><span>Snowflake</span><span>PySpark</span><span>MLflow</span><span>Model Context Protocol</span>
+    </div>
+  </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
-<section id="about">
+<!-- ═══ EXPERTISE ═══ -->
+<section class="section" id="expertise">
   <div class="container">
-    <div class="sec-label"><span class="c-cyan">01.</span> About Me</div>
-    <div class="about-wrap">
-      <div class="about-text">
-        <h2 class="sec-title">Building Cloud-Native <span class="grad-text">Data Intelligence</span></h2>
-        <p>I'm <strong>Ganesh Kumar</strong>, a Solutions Architect at <strong>Zeb AI Pvt Ltd</strong> — specializing in AWS cloud architecture, data platforms, and AI/GenAI solutions with hands-on experience designing secure, scalable, and cost-optimized systems in production environments.</p>
-        <p>My work focuses on building end-to-end cloud architectures aligned to the <span class="hl-aws">AWS Well-Architected Framework</span> — covering cloud strategy, large-scale migrations, high availability, modern <span class="hl-snow">data lakehouse platforms</span>, and <span class="hl-ai">AI/GenAI enablement on AWS</span>.</p>
-        <p>I'm AWS Certified Solutions Architect – Professional, with additional certifications across <span class="hl-db">Databricks</span>, Snowflake, and GenAI. I enjoy working at the intersection of cloud engineering, data architecture, and AI innovation.</p>
-        <div class="about-chips">
-          <span class="chip"><svg class="ico"><use href="#i-cloud"/></svg> AWS Well-Architected</span>
-          <span class="chip"><svg class="ico"><use href="#i-layers"/></svg> Medallion Architecture</span>
-          <span class="chip"><svg class="ico"><use href="#i-bot"/></svg> Amazon Bedrock / GenAI</span>
-          <span class="chip"><svg class="ico"><use href="#i-snow"/></svg> Snowflake</span>
-          <span class="chip"><svg class="ico"><use href="#i-zap"/></svg> Databricks</span>
-          <span class="chip"><svg class="ico"><use href="#i-refresh"/></svg> Data Modernization</span>
-          <span class="chip"><svg class="ico"><use href="#i-cpu"/></svg> MLOps / Agentic AI</span>
-          <span class="chip"><svg class="ico"><use href="#i-mic"/></svg> Tech Speaker</span>
+    <div class="section-head reveal">
+      <p class="kicker">01 · Expertise</p>
+      <h2>What I help teams <em>build</em></h2>
+      <p class="lede">I work across the full path from raw data to AI in production: architecture, the engineering underneath it, and the cost and governance decisions that keep it running.</p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar reveal">
+        <div class="pillar-icon"><svg class="ic"><use href="#i-cloud"/></svg></div>
+        <h3>Data platforms on AWS</h3>
+        <p>End-to-end architectures on S3, Glue, Redshift, Athena, Kinesis and Lake Formation, designed against the Well-Architected pillars.</p>
+        <ul class="tags"><li>S3</li><li>Glue</li><li>Redshift</li><li>Athena</li><li>Kinesis</li></ul>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-icon"><svg class="ic"><use href="#i-bot"/></svg></div>
+        <h3>Generative &amp; agentic AI</h3>
+        <p>Production GenAI on Amazon Bedrock, agent workflows using the Model Context Protocol, and MLOps that keeps models observable.</p>
+        <ul class="tags"><li>Bedrock</li><li>MCP</li><li>Agents</li><li>MLOps</li></ul>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-icon"><svg class="ic"><use href="#i-layers"/></svg></div>
+        <h3>Lakehouse architecture</h3>
+        <p>Medallion (bronze, silver, gold) designs on Databricks and Delta Lake, with Snowflake or Redshift as the curated analytics layer.</p>
+        <ul class="tags"><li>Databricks</li><li>Delta Lake</li><li>Snowflake</li><li>Unity Catalog</li></ul>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-icon"><svg class="ic"><use href="#i-gauge"/></svg></div>
+        <h3>Migration &amp; optimization</h3>
+        <p>Large-scale cloud migrations, right-sized compute and storage, and query tuning that cuts cost while improving SLAs.</p>
+        <ul class="tags"><li>PySpark</li><li>SparkSQL</li><li>Cost control</li><li>CI/CD</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPEN SOURCE ═══ -->
+<section class="section section-alt" id="open-source">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">02 · Open source</p>
+      <h2>Work you can <em>run yourself</em></h2>
+      <p class="lede">Public projects for the AWS data community. Clone them, use them, open an issue.</p>
+    </div>
+
+    <article class="oss-feature reveal">
+      <div class="oss-copy">
+        <div class="oss-meta"><span class="pill pill-orange">Featured</span><span class="pill">Python · Apache-2.0</span></div>
+        <h3>data-agent-gauntlet</h3>
+        <p class="oss-tagline">An open-source way to decide which AI coding agent to trust with your data platform.</p>
+        <p>Agents such as Claude Code, Kiro, Codex and Cursor now write SQL and design warehouse tables. This harness gives them real tasks on <strong>Amazon Redshift Serverless</strong> and lets the warehouse, not the agent, decide pass or fail. It runs a baseline arm and a skills arm so you can measure what agent skills actually change.</p>
+        <ul class="oss-points">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><strong>20 tasks</strong> across query writing, schema design, loading, troubleshooting and optimization</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Reads <code>sys_query_history</code> to count failed statements and PostgreSQL habits that break on Redshift</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span>Sandboxed by default: scoped IAM role, daily RPU cap, one-command teardown</span></li>
+        </ul>
+        <div class="oss-actions">
+          <a class="btn btn-primary" href="https://github.com/geodelab/data-agent-gauntlet" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> View on GitHub</a>
+          <a class="btn btn-ghost" href="https://github.com/geodelab/data-agent-gauntlet/stargazers" target="_blank" rel="noopener"><svg class="ic"><use href="#i-star"/></svg> Star it</a>
         </div>
       </div>
-      <div class="about-visual">
-        <div class="avatar-orbit">
-          <div class="orbit-ring r1"></div>
-          <div class="orbit-ring r2"></div>
-          <div class="orbit-ring r3"></div>
-          <div class="avatar-core"><span>GK</span></div>
-          <div class="orbit-icon oi-1">AWS</div>
-          <div class="orbit-icon oi-2"><svg class="ico"><use href="#i-snow"/></svg></div>
-          <div class="orbit-icon oi-3"><svg class="ico"><use href="#i-zap"/></svg></div>
-          <div class="orbit-icon oi-4"><svg class="ico"><use href="#i-bot"/></svg></div>
-        </div>
-        <div class="about-company">
-          <div class="company-label">Currently at</div>
-          <div class="company-name">Zeb AI Pvt Ltd</div>
-          <div class="company-role">Solutions Architect · Chennai, India</div>
-        </div>
+      <div class="terminal" aria-label="Example data-agent-gauntlet commands">
+        <div class="term-bar"><span></span><span></span><span></span><em>dagt · zsh</em></div>
+<pre><code><span class="c"># sandbox stack + TICKIT sample data</span>
+<span class="p">$</span> dagt setup --region us-east-1
+<span class="p">$</span> dagt doctor
+
+<span class="c"># same 20 tasks, without and with skills</span>
+<span class="p">$</span> dagt run --arm baseline --run-id main
+<span class="p">$</span> dagt run --arm skills   --run-id main
+
+<span class="c"># pass rate, first-try success, traps</span>
+<span class="p">$</span> dagt report results/main
+<span class="o">✓ wrote summary.md and attempts.csv</span>
+
+<span class="p">$</span> dagt teardown<span class="cursor"></span></code></pre>
       </div>
+    </article>
+
+    <article class="oss-card reveal">
+      <div>
+        <div class="oss-meta"><span class="pill">Learning resource · Free</span></div>
+        <h3>data-ai-roadmap</h3>
+        <p>A step-by-step, free roadmap from student to Data Engineer, Cloud and AI practitioner. Written for final-year students: foundations, data engineering, cloud and GenAI, with something to build at every stage.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://github.com/geodelab/data-ai-roadmap" target="_blank" rel="noopener">Open the roadmap <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ SELECTED WORK ═══ -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">03 · Selected work</p>
+      <h2>Architectures I've <em>designed &amp; shipped</em></h2>
+      <p class="lede">Patterns from client engagements. Details are generalized to respect client confidentiality.</p>
+    </div>
+
+    <div class="work-grid">
+      <article class="work-card work-lg reveal">
+        <div class="work-lg-copy">
+          <p class="work-cat">Enterprise architecture · Featured</p>
+          <h3>Cloud-native data lakehouse on AWS + Databricks</h3>
+          <p>An enterprise lakehouse using the Medallion pattern: bronze, silver and gold layers on Amazon S3 and Delta Lake, with Amazon Redshift as the curated analytics layer. AWS Lake Formation provides fine-grained governance and Amazon Kinesis handles real-time ingestion.</p>
+          <dl class="work-metrics">
+            <div><dt>Uptime SLA</dt><dd>99.9%</dd></div>
+            <div><dt>Ingestion</dt><dd>Real-time</dd></div>
+            <div><dt>Governance</dt><dd>Fine-grained</dd></div>
+          </dl>
+          <ul class="tags"><li>Amazon S3</li><li>Databricks</li><li>Delta Lake</li><li>Redshift</li><li>Kinesis</li><li>Lake Formation</li><li>PySpark</li></ul>
+        </div>
+        <ol class="flow" aria-label="Data flow from sources to analytics">
+          <li><span class="fl-n">1</span><div><strong>Ingest</strong><small>Amazon Kinesis · AWS Glue</small></div></li>
+          <li class="b"><span class="fl-n">2</span><div><strong>Bronze</strong><small>Raw data on Amazon S3 · Delta Lake</small></div></li>
+          <li class="s"><span class="fl-n">3</span><div><strong>Silver</strong><small>Cleaned and conformed · Databricks</small></div></li>
+          <li class="g"><span class="fl-n">4</span><div><strong>Gold</strong><small>Business-ready aggregates</small></div></li>
+          <li><span class="fl-n">5</span><div><strong>Serve</strong><small>Amazon Redshift · BI · AI</small></div></li>
+          <li class="fl-gov"><div><strong>Governed by AWS Lake Formation</strong><small>Fine-grained access across every layer</small></div></li>
+        </ol>
+      </article>
+
+      <article class="work-card reveal">
+        <p class="work-cat">GenAI · Agentic AI</p>
+        <h3>Agentic AI platform with MCP</h3>
+        <p>A production agent workflow system on Amazon Bedrock using the Model Context Protocol. Agents query data warehouses, generate reports and trigger downstream actions.</p>
+        <ul class="tags"><li>Amazon Bedrock</li><li>MCP</li><li>AWS Lambda</li><li>Python</li></ul>
+      </article>
+
+      <article class="work-card reveal">
+        <p class="work-cat">Databricks · MLOps</p>
+        <h3>MLOps pipeline on Databricks</h3>
+        <p>MLflow experiment tracking, automated retraining, a Delta Lake feature store and CI/CD deployment pipelines for models.</p>
+        <ul class="tags"><li>Databricks</li><li>MLflow</li><li>Delta Lake</li><li>PySpark</li></ul>
+      </article>
+
+      <article class="work-card reveal">
+        <p class="work-cat">Snowflake · Analytics</p>
+        <h3>Snowflake analytics hub</h3>
+        <p>An analytics platform with Snowflake data sharing, automated cost governance and a self-service layer that reduced infrastructure spend.</p>
+        <ul class="tags"><li>Snowflake</li><li>dbt</li><li>Python</li><li>SQL</li></ul>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ═══ EXPERIENCE ═══ -->
-<section id="experience">
+<section class="section section-alt" id="experience">
   <div class="container">
-    <div class="sec-label"><span class="c-cyan">02.</span> Experience</div>
-    <h2 class="sec-title">Where I've <span class="grad-text">Architected</span></h2>
-    <div class="timeline">
-
-      <!-- ZEB -->
-      <div class="tl-item">
-        <div class="tl-marker"><div class="tl-dot active"></div><div class="tl-line"></div></div>
-        <div class="tl-card tl-featured">
-          <div class="tl-top">
-            <div>
-              <div class="tl-badge">● Current Role</div>
-              <h3 class="tl-role">Solutions Architect</h3>
-              <div class="tl-org"><span class="org-logo org-zeb">ZEB</span>Zeb AI Pvt Ltd · Full-time · Chennai</div>
-            </div>
-            <div class="tl-period">May 2025 – Present</div>
-          </div>
-          <ul class="tl-pts">
-            <li>Lead the design and implementation of robust, <span class="hl-aws">cloud-native data and AI platforms</span> on AWS — leveraging S3, Glue, Athena, and Amazon Bedrock for generative AI applications</li>
-            <li>Architect <span class="hl-ai">MLOps frameworks and agentic workflows</span> using Model Context Protocol (MCP) for production AI systems</li>
-            <li>Build scalable data processing pipelines using <span class="hl-db">PySpark and SparkSQL</span> for optimized ETL and complex data models</li>
-            <li>Partner with cross-functional teams to translate complex business requirements into scalable technical architectures, driving data-driven decision-making</li>
-            <li>Manage and mentor a team of Data and AI Engineers, fostering a collaborative environment that encourages innovation</li>
-          </ul>
-          <div class="tl-stack"><span>AWS</span><span>Amazon Bedrock</span><span>PySpark</span><span>Databricks</span><span>Snowflake</span><span>MCP</span><span>MLOps</span><span>Agentic AI</span></div>
-        </div>
-      </div>
-
-      <!-- AVASOFT Senior -->
-      <div class="tl-item">
-        <div class="tl-marker"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <h3 class="tl-role">Senior Data Engineer</h3>
-              <div class="tl-org"><span class="org-logo org-ava">AVA</span>AVASOFT · Full-time · Chennai</div>
-            </div>
-            <div class="tl-period">Sep 2023 – Apr 2025 · 1 yr 8 mos</div>
-          </div>
-          <ul class="tl-pts">
-            <li>Designed and led end-to-end data and AI solutions using <span class="hl-aws">AWS-native services</span> — S3, Redshift, Glue, Lambda, Kinesis, Step Functions, Lake Formation — and Databricks for advanced analytics and ML workloads</li>
-            <li>Architected <span class="hl-db">data lakehouse platforms</span> on AWS and Databricks, combining Delta/Lakehouse patterns with Redshift for curated analytics layers with governance and cost control</li>
-            <li>Provided technical leadership on PySpark, Databricks, AWS Glue, Redshift and CI/CD; drove standards for data quality, observability and performance</li>
-            <li>Led optimisation initiatives across AWS-native pipelines and Databricks workloads — right-sizing compute/storage and tuning queries to cut costs and improve SLAs</li>
-          </ul>
-          <div class="tl-stack"><span>AWS Glue</span><span>Redshift</span><span>Lambda</span><span>Kinesis</span><span>Databricks</span><span>PySpark</span><span>Delta Lake</span><span>Lake Formation</span></div>
-        </div>
-      </div>
-
-      <!-- AVASOFT Data Engineer -->
-      <div class="tl-item">
-        <div class="tl-marker"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <h3 class="tl-role">Data Engineer</h3>
-              <div class="tl-org"><span class="org-logo org-ava">AVA</span>AVASOFT · Full-time · Chennai</div>
-            </div>
-            <div class="tl-period">May 2022 – Aug 2023 · 1 yr 4 mos</div>
-          </div>
-          <ul class="tl-pts">
-            <li>Built and maintained <span class="hl-aws">ETL/ELT workflows</span> using AWS Glue, PySpark, Redshift, Lambda and Databricks to integrate diverse sources into a central lakehouse</li>
-            <li>Collaborated with analytics and product teams to model data optimised for dashboards and self-service analytics on <span class="hl-snow">Redshift and Databricks SQL</span></li>
-            <li>Improved performance of AWS-native pipelines and Redshift queries through key design (dist/sort keys, compression) and PySpark/SQL optimisations</li>
-            <li>Contributed to internal AWS-native data engineering utilities and Databricks templates to standardise and accelerate new project setup</li>
-          </ul>
-          <div class="tl-stack"><span>AWS Glue</span><span>PySpark</span><span>Redshift</span><span>Lambda</span><span>Databricks SQL</span><span>SQL</span></div>
-        </div>
-      </div>
-
-      <!-- AVASOFT Trainee -->
-      <div class="tl-item">
-        <div class="tl-marker"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-card">
-          <div class="tl-top">
-            <div>
-              <h3 class="tl-role">Trainee Data Engineer</h3>
-              <div class="tl-org"><span class="org-logo org-ava">AVA</span>AVASOFT · Chennai</div>
-            </div>
-            <div class="tl-period">Nov 2021 – Apr 2022 · 6 mos</div>
-          </div>
-          <ul class="tl-pts">
-            <li>Supported senior engineers in building <span class="hl-aws">AWS Glue / PySpark pipelines</span> and basic Databricks jobs</li>
-            <li>Performed data profiling, validation and initial performance tuning under guidance</li>
-            <li>Completed structured training in AWS data warehousing, Databricks, Spark and modern data engineering — progressing to Data Engineer within 6 months</li>
-          </ul>
-          <div class="tl-stack"><span>AWS Glue</span><span>PySpark</span><span>Databricks</span><span>Spark</span><span>SQL</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SKILLS ═══ -->
-<section id="skills">
-  <div class="container">
-    <div class="sec-label"><span class="c-cyan">03.</span> Skills</div>
-    <h2 class="sec-title">My <span class="grad-text">Tech Arsenal</span></h2>
-
-    <div class="skills-domains">
-      <div class="domain-card">
-        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
-        <h3>Cloud Architecture</h3>
-        <div class="domain-bars">
-          <div class="dbar"><span>AWS (S3, Glue, Redshift, Lambda, Athena)</span><div class="bar-track"><div class="bar-fill" data-w="95"></div></div><em>95%</em></div>
-          <div class="dbar"><span>Solution Architecture</span><div class="bar-track"><div class="bar-fill" data-w="92"></div></div><em>92%</em></div>
-          <div class="dbar"><span>AWS Well-Architected Framework</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div><em>90%</em></div>
-          <div class="dbar"><span>Serverless / Lambda / Step Functions</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div><em>85%</em></div>
-        </div>
-      </div>
-      <div class="domain-card">
-        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-layers"/></svg></div>
-        <h3>Data Platforms</h3>
-        <div class="domain-bars">
-          <div class="dbar"><span>Databricks / Delta Lake</span><div class="bar-track"><div class="bar-fill" data-w="93"></div></div><em>93%</em></div>
-          <div class="dbar"><span>Snowflake</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><em>88%</em></div>
-          <div class="dbar"><span>Medallion Architecture</span><div class="bar-track"><div class="bar-fill" data-w="92"></div></div><em>92%</em></div>
-          <div class="dbar"><span>Data Maintenance &amp; Governance</span><div class="bar-track"><div class="bar-fill" data-w="87"></div></div><em>87%</em></div>
-        </div>
-      </div>
-      <div class="domain-card">
-        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-bot"/></svg></div>
-        <h3>AI &amp; GenAI</h3>
-        <div class="domain-bars">
-          <div class="dbar"><span>Amazon Bedrock</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><em>88%</em></div>
-          <div class="dbar"><span>Agentic AI / MCP</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div><em>82%</em></div>
-          <div class="dbar"><span>MLOps Frameworks</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div><em>85%</em></div>
-          <div class="dbar"><span>GenAI Solution Architecture</span><div class="bar-track"><div class="bar-fill" data-w="87"></div></div><em>87%</em></div>
-        </div>
-      </div>
-      <div class="domain-card">
-        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-cog"/></svg></div>
-        <h3>Data Engineering</h3>
-        <div class="domain-bars">
-          <div class="dbar"><span>PySpark / SparkSQL</span><div class="bar-track"><div class="bar-fill" data-w="93"></div></div><em>93%</em></div>
-          <div class="dbar"><span>Python / SQL</span><div class="bar-track"><div class="bar-fill" data-w="95"></div></div><em>95%</em></div>
-          <div class="dbar"><span>ETL / ELT Pipelines</span><div class="bar-track"><div class="bar-fill" data-w="92"></div></div><em>92%</em></div>
-          <div class="dbar"><span>AWS Redshift / Kinesis</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div><em>88%</em></div>
-        </div>
-      </div>
-      <div class="domain-card">
-        <div class="domain-icon"><svg class="ico ico-xl"><use href="#i-palette"/></svg></div>
-        <h3>Web Design &amp; Frontend</h3>
-        <div class="domain-bars">
-          <div class="dbar"><span>Three.js / WebGL / React Three Fiber</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div><em>82%</em></div>
-          <div class="dbar"><span>GSAP / ScrollTrigger / Framer Motion</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div><em>85%</em></div>
-          <div class="dbar"><span>HTML5 / CSS3 / JavaScript (ES2024)</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div><em>90%</em></div>
-          <div class="dbar"><span>React / Next.js / TypeScript</span><div class="bar-track"><div class="bar-fill" data-w="80"></div></div><em>80%</em></div>
-        </div>
-      </div>
+    <div class="section-head reveal">
+      <p class="kicker">04 · Experience</p>
+      <h2>From trainee to <em>architect</em> in under four years</h2>
     </div>
 
-    <div class="stack-grid">
-      <div class="stack-item" style="--c:#ff9900"><div class="si-logo">AWS</div><div class="si-name">Amazon Web Services</div></div>
-      <div class="stack-item" style="--c:#29b5e8"><div class="si-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div><div class="si-name">Snowflake</div></div>
-      <div class="stack-item" style="--c:#ff3621"><div class="si-logo"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div><div class="si-name">Databricks</div></div>
-      <div class="stack-item" style="--c:#e4532a"><div class="si-logo">Spk</div><div class="si-name">PySpark</div></div>
-      <div class="stack-item" style="--c:#ff8c00"><div class="si-logo">Δ</div><div class="si-name">Delta Lake</div></div>
-      <div class="stack-item" style="--c:#3776ab"><div class="si-logo">Py</div><div class="si-name">Python</div></div>
-      <div class="stack-item" style="--c:#00f5ff"><div class="si-logo">SQL</div><div class="si-name">Advanced SQL</div></div>
-      <div class="stack-item" style="--c:#8338ec"><div class="si-logo"><svg class="ico ico-lg"><use href="#i-bot"/></svg></div><div class="si-name">Amazon Bedrock</div></div>
-      <div class="stack-item" style="--c:#ff9900"><div class="si-logo">RS</div><div class="si-name">AWS Redshift</div></div>
-      <div class="stack-item" style="--c:#2496ed"><div class="si-logo">Glu</div><div class="si-name">AWS Glue</div></div>
-      <div class="stack-item" style="--c:#f05032"><div class="si-logo">λ</div><div class="si-name">AWS Lambda</div></div>
-      <div class="stack-item" style="--c:#017cee"><div class="si-logo">MCP</div><div class="si-name">Agentic / MCP</div></div>
-      <div class="stack-item" style="--c:#e53e3e"><div class="si-logo">R3F</div><div class="si-name">React Three Fiber</div></div>
-      <div class="stack-item" style="--c:#88ce02"><div class="si-logo">GS</div><div class="si-name">GSAP Animation</div></div>
-      <div class="stack-item" style="--c:#0055ff"><div class="si-logo">⬡</div><div class="si-name">Three.js / WebGL</div></div>
-      <div class="stack-item" style="--c:#06b6d4"><div class="si-logo">FM</div><div class="si-name">Framer Motion</div></div>
-    </div>
+    <ol class="timeline">
+      <li class="tl-item reveal">
+        <div class="tl-when"><span class="now">Current</span>May 2025 – Present</div>
+        <div class="tl-body">
+          <h3>Solutions Architect</h3>
+          <p class="tl-org">Zeb AI Pvt Ltd · Chennai</p>
+          <ul>
+            <li>Lead design and delivery of cloud-native data and AI platforms on AWS using S3, Glue, Athena and Amazon Bedrock.</li>
+            <li>Architect MLOps frameworks and agent workflows built on the Model Context Protocol for production AI systems.</li>
+            <li>Build PySpark and SparkSQL pipelines for ETL and complex data models.</li>
+            <li>Translate business requirements into technical architectures with cross-functional teams.</li>
+            <li>Manage and mentor a team of data and AI engineers.</li>
+          </ul>
+          <ul class="tags"><li>AWS</li><li>Amazon Bedrock</li><li>PySpark</li><li>Databricks</li><li>Snowflake</li><li>MCP</li><li>MLOps</li></ul>
+        </div>
+      </li>
+      <li class="tl-item reveal">
+        <div class="tl-when">Sep 2023 – Apr 2025</div>
+        <div class="tl-body">
+          <h3>Senior Data Engineer</h3>
+          <p class="tl-org">AVASOFT · Chennai</p>
+          <ul>
+            <li>Led end-to-end data and AI solutions on S3, Redshift, Glue, Lambda, Kinesis, Step Functions and Lake Formation, with Databricks for analytics and ML.</li>
+            <li>Architected lakehouse platforms combining Delta Lake with Redshift curated layers, including governance and cost control.</li>
+            <li>Set standards for data quality, observability and performance across PySpark, Glue, Redshift and CI/CD.</li>
+            <li>Right-sized compute and storage and tuned queries to cut cost and improve SLAs.</li>
+          </ul>
+          <ul class="tags"><li>AWS Glue</li><li>Redshift</li><li>Lambda</li><li>Kinesis</li><li>Databricks</li><li>Delta Lake</li><li>Lake Formation</li></ul>
+        </div>
+      </li>
+      <li class="tl-item reveal">
+        <div class="tl-when">May 2022 – Aug 2023</div>
+        <div class="tl-body">
+          <h3>Data Engineer</h3>
+          <p class="tl-org">AVASOFT · Chennai</p>
+          <ul>
+            <li>Built ETL/ELT workflows with Glue, PySpark, Redshift, Lambda and Databricks feeding a central lakehouse.</li>
+            <li>Modelled data for dashboards and self-service analytics on Redshift and Databricks SQL.</li>
+            <li>Tuned Redshift with distribution and sort keys, compression and SQL optimization.</li>
+            <li>Built internal utilities and Databricks templates that sped up new project setup.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="tl-item reveal">
+        <div class="tl-when">Nov 2021 – Apr 2022</div>
+        <div class="tl-body">
+          <h3>Trainee Data Engineer</h3>
+          <p class="tl-org">AVASOFT · Chennai</p>
+          <ul>
+            <li>Built Glue and PySpark pipelines and Databricks jobs with senior engineers; promoted to Data Engineer in six months.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="tl-item tl-edu reveal">
+        <div class="tl-when">2018 – 2022</div>
+        <div class="tl-body">
+          <h3>B.E. Computer Science</h3>
+          <p class="tl-org">DMI College of Engineering · Chennai</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ═══ CERTIFICATIONS ═══ -->
-<section id="certifications">
+<section class="section" id="certifications">
   <div class="container">
-    <div class="sec-label"><span class="c-cyan">04.</span> Certifications</div>
-    <h2 class="sec-title">10+ Verified <span class="grad-text">Certifications</span></h2>
-    <div class="cert-count-row">
-      <div class="cert-count-item"><span class="cert-count-num">4</span><span class="cert-count-lbl">AWS</span></div>
-      <div class="cert-count-item"><span class="cert-count-num">6</span><span class="cert-count-lbl">Databricks</span></div>
-      <div class="cert-count-item"><span class="cert-count-num">2</span><span class="cert-count-lbl">Snowflake</span></div>
+    <div class="section-head reveal">
+      <p class="kicker">05 · Certifications</p>
+      <h2>12 credentials, <em>verifiable</em></h2>
+      <p class="lede">Across AWS, Databricks and Snowflake. Where a public verification page exists, the card links to it.</p>
     </div>
 
-    <!-- AWS CERTS -->
-    <div class="cert-group">
-      <div class="cert-group-label" style="--gc:#ff9900"><svg class="ico ico-lg"><use href="#i-cloud"/></svg> Amazon Web Services</div>
-      <div class="cert-row">
-
-        <div class="cert-full-card" style="--ac:#ff9900">
-          <div class="cfc-top">
-            <div class="cfc-logo">AWS</div>
-            <div class="cfc-badge">ASSOCIATE</div>
-          </div>
-          <div class="cfc-name">AWS Certified Machine Learning Engineer – Associate</div>
-          <div class="cfc-sub">ML Pipelines · Model Deployment · MLOps · Monitoring · NLP</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Apr 2026</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#ff9900">
-          <div class="cfc-top">
-            <div class="cfc-logo">AWS</div>
-            <div class="cfc-badge">PROFESSIONAL</div>
-          </div>
-          <div class="cfc-name">AWS Certified Solutions Architect</div>
-          <div class="cfc-sub">AWS Solutions Architect Professional</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
-            <span class="cfc-id">ID: 8039b369-0326-40dd-90f7-10abd33c474a</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#ff9900">
-          <div class="cfc-top">
-            <div class="cfc-logo">AWS</div>
-            <div class="cfc-badge">SPECIALTY</div>
-          </div>
-          <div class="cfc-name">AWS Certified Data Analytics – Specialty</div>
-          <div class="cfc-sub">Analytics · Kinesis · Glue · Redshift · Lake Formation</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Nov 2023</span>
-            <span class="cfc-id">ID: VH9PJHJ2XNFEQZC2</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-      </div>
+    <div class="cert-filter reveal" role="tablist" aria-label="Filter certifications">
+      <button class="active" data-filter="all" role="tab" aria-selected="true">All <span>12</span></button>
+      <button data-filter="aws" role="tab" aria-selected="false">AWS <span>3</span></button>
+      <button data-filter="databricks" role="tab" aria-selected="false">Databricks <span>6</span></button>
+      <button data-filter="snowflake" role="tab" aria-selected="false">Snowflake <span>3</span></button>
     </div>
 
-    <!-- DATABRICKS CERTS -->
-    <div class="cert-group">
-      <div class="cert-group-label" style="--gc:#ff3621"><svg class="ico ico-lg"><use href="#i-zap"/></svg> Databricks</div>
-      <div class="cert-row">
-
-        <div class="cert-full-card" style="--ac:#ff3621">
-          <div class="cfc-top">
-            <div class="cfc-logo">DB</div>
-            <div class="cfc-badge">PROFESSIONAL</div>
-          </div>
-          <div class="cfc-name">Databricks Certified Data Engineer Professional</div>
-          <div class="cfc-sub">Delta Lake · MLflow · Production Pipelines · PySpark</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
-            <span class="cfc-id">ID: 173730929</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#ff3621">
-          <div class="cfc-top">
-            <div class="cfc-logo">DB</div>
-            <div class="cfc-badge">ASSOCIATE</div>
-          </div>
-          <div class="cfc-name">Databricks Certified Data Engineer Associate</div>
-          <div class="cfc-sub">Spark · Delta Lake · Data Engineering Fundamentals</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2023</span>
-            <span class="cfc-id">ID: 68533427</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#8338ec">
-          <div class="cfc-top">
-            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-bot"/></svg></div>
-            <div class="cfc-badge">ACCREDITATION</div>
-          </div>
-          <div class="cfc-name">Academy Accreditation – Generative AI Fundamentals</div>
-          <div class="cfc-sub">LLMs · Prompt Engineering · RAG · Responsible AI</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Mar 2024</span>
-            <span class="cfc-id">ID: 96789627</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#ff3621">
-          <div class="cfc-top">
-            <div class="cfc-logo">DB</div>
-            <div class="cfc-badge">PARTNER</div>
-          </div>
-          <div class="cfc-name">Partner Training – Advantages of Expanding EDW with Data Intelligence</div>
-          <div class="cfc-sub">Enterprise Data Warehouse · Lakehouse Migration</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
-            <span class="cfc-id">ID: 173508953</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#ff3621">
-          <div class="cfc-top">
-            <div class="cfc-logo">DB</div>
-            <div class="cfc-badge">PARTNER</div>
-          </div>
-          <div class="cfc-name">Partner Training – Advantages of Data &amp; AI Governance</div>
-          <div class="cfc-sub">Unity Catalog · Data Governance · Security · Compliance</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Feb 2026</span>
-            <span class="cfc-id">ID: 173508735</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#ff3621">
-          <div class="cfc-top">
-            <div class="cfc-logo">DB</div>
-            <div class="cfc-badge">FUNDAMENTALS</div>
-          </div>
-          <div class="cfc-name">Databricks Lakehouse Fundamentals</div>
-          <div class="cfc-sub">Lakehouse Architecture · Delta Lake · Databricks Platform</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Sep 2023</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
+    <div class="cert-grid">
+      <a class="cert cert-hero reveal" data-vendor="aws" href="https://www.credly.com/badges/8039b369-0326-40dd-90f7-10abd33c474a" target="_blank" rel="noopener">
+        <span class="cert-logo aws-logo">aws</span>
+        <span class="cert-level">Professional</span>
+        <h3>AWS Certified Solutions Architect – Professional</h3>
+        <p>Complex multi-account architectures, migrations, cost and resilience at scale.</p>
+        <span class="cert-foot"><span>Feb 2026</span><span class="verify">Verify on Credly <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <div class="cert reveal" data-vendor="aws">
+        <span class="cert-logo aws-logo">aws</span>
+        <span class="cert-level">Associate</span>
+        <h3>AWS Certified Machine Learning Engineer – Associate</h3>
+        <p>ML pipelines, model deployment, MLOps and monitoring.</p>
+        <span class="cert-foot"><span>Apr 2026</span></span>
       </div>
-    </div>
+      <a class="cert reveal" data-vendor="aws" href="https://aws.amazon.com/verification" target="_blank" rel="noopener">
+        <span class="cert-logo aws-logo">aws</span>
+        <span class="cert-level">Specialty</span>
+        <h3>AWS Certified Data Analytics – Specialty</h3>
+        <p>Kinesis, Glue, Redshift and Lake Formation.</p>
+        <span class="cert-foot"><span>Nov 2023 · ID VH9PJHJ2XNFEQZC2</span><span class="verify">Verify <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
 
-    <!-- SNOWFLAKE CERTS -->
-    <div class="cert-group">
-      <div class="cert-group-label" style="--gc:#29b5e8"><svg class="ico ico-lg"><use href="#i-snow"/></svg> Snowflake</div>
-      <div class="cert-row">
-
-        <div class="cert-full-card" style="--ac:#29b5e8">
-          <div class="cfc-top">
-            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
-            <div class="cfc-badge">CORE CERT</div>
-          </div>
-          <div class="cfc-name">SnowPro Core Certification</div>
-          <div class="cfc-sub">Data Warehousing · Virtual Warehouses · Snowpark · Time Travel</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Jul 2022</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#29b5e8">
-          <div class="cfc-top">
-            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
-            <div class="cfc-badge">TECHNICAL SALES</div>
-          </div>
-          <div class="cfc-name">Snowflake Technical Sales Professional Accreditation</div>
-          <div class="cfc-sub">Technical Architecture · Pre-Sales · Solution Design</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Jul 2022</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-        <div class="cert-full-card" style="--ac:#29b5e8">
-          <div class="cfc-top">
-            <div class="cfc-logo"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
-            <div class="cfc-badge">SALES PRO</div>
-          </div>
-          <div class="cfc-name">Snowflake Sales Professional Accreditation</div>
-          <div class="cfc-sub">Snowflake Platform · Business Value · Sales Methodology</div>
-          <div class="cfc-meta">
-            <span><svg class="ico"><use href="#i-calendar"/></svg>Aug 2023</span>
-          </div>
-          <div class="cfc-verify">✓ VERIFIED</div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ PROJECTS ═══ -->
-<section id="projects">
-  <div class="container">
-    <div class="sec-label"><span class="c-cyan">05.</span> Projects</div>
-    <h2 class="sec-title">Things I've <span class="grad-text">Built &amp; Shipped</span></h2>
-    <div class="projects-mosaic">
-
-      <div class="proj-hero-card">
-        <div class="phc-glow"></div>
-        <div class="phc-top">
-          <span class="phc-icon"><svg class="ico ico-xl"><use href="#i-layers"/></svg></span>
-          <div class="phc-links">
-            <a href="https://github.com/geodelab" target="_blank">GitHub ↗</a>
-          </div>
-        </div>
-        <div class="phc-tag">Enterprise Architecture · Featured</div>
-        <h3>Cloud-Native Data Lakehouse on AWS + Databricks</h3>
-        <p>End-to-end enterprise data lakehouse using Medallion Architecture — Bronze/Silver/Gold layers on AWS S3 + Databricks Delta Lake, with Redshift as the curated analytics layer. Incorporates Lake Formation for fine-grained governance and Kinesis for real-time streaming ingestion.</p>
-        <div class="phc-metrics">
-          <div class="phc-m"><span>Medallion</span>Architecture</div>
-          <div class="phc-m"><span>99.9%</span>Uptime SLA</div>
-          <div class="phc-m"><span>Real-time</span>Kinesis Streams</div>
-          <div class="phc-m"><span>Fine-grain</span>Lake Formation</div>
-        </div>
-        <div class="phc-stack"><span>AWS S3</span><span>Databricks</span><span>Delta Lake</span><span>Redshift</span><span>Kinesis</span><span>Lake Formation</span><span>PySpark</span></div>
+      <a class="cert reveal" data-vendor="databricks" href="https://credentials.databricks.com/173730929" target="_blank" rel="noopener">
+        <span class="cert-logo db-logo">DB</span>
+        <span class="cert-level">Professional</span>
+        <h3>Databricks Certified Data Engineer Professional</h3>
+        <p>Delta Lake, MLflow and production pipelines.</p>
+        <span class="cert-foot"><span>Feb 2026</span><span class="verify">Verify <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <a class="cert reveal" data-vendor="databricks" href="https://credentials.databricks.com/68533427" target="_blank" rel="noopener">
+        <span class="cert-logo db-logo">DB</span>
+        <span class="cert-level">Associate</span>
+        <h3>Databricks Certified Data Engineer Associate</h3>
+        <p>Spark, Delta Lake and data engineering fundamentals.</p>
+        <span class="cert-foot"><span>Feb 2023</span><span class="verify">Verify <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <a class="cert reveal" data-vendor="databricks" href="https://credentials.databricks.com/96789627" target="_blank" rel="noopener">
+        <span class="cert-logo db-logo">DB</span>
+        <span class="cert-level">Accreditation</span>
+        <h3>Generative AI Fundamentals</h3>
+        <p>LLMs, prompt engineering, RAG and responsible AI.</p>
+        <span class="cert-foot"><span>Mar 2024</span><span class="verify">Verify <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <a class="cert reveal" data-vendor="databricks" href="https://credentials.databricks.com/173508953" target="_blank" rel="noopener">
+        <span class="cert-logo db-logo">DB</span>
+        <span class="cert-level">Partner</span>
+        <h3>Expanding EDW with Data Intelligence</h3>
+        <p>Enterprise data warehouse to lakehouse migration.</p>
+        <span class="cert-foot"><span>Feb 2026</span><span class="verify">Verify <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <a class="cert reveal" data-vendor="databricks" href="https://credentials.databricks.com/173508735" target="_blank" rel="noopener">
+        <span class="cert-logo db-logo">DB</span>
+        <span class="cert-level">Partner</span>
+        <h3>Data &amp; AI Governance</h3>
+        <p>Unity Catalog, security and compliance.</p>
+        <span class="cert-foot"><span>Feb 2026</span><span class="verify">Verify <svg class="ic"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <div class="cert reveal" data-vendor="databricks">
+        <span class="cert-logo db-logo">DB</span>
+        <span class="cert-level">Fundamentals</span>
+        <h3>Databricks Lakehouse Fundamentals</h3>
+        <p>Lakehouse architecture and the Databricks platform.</p>
+        <span class="cert-foot"><span>Sep 2023</span></span>
       </div>
 
-      <div class="proj-grid">
-
-        <div class="proj-sm-card">
-          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-bot"/></svg></div>
-          <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
-          <div class="psc-tag">GenAI · Agentic AI</div>
-          <h4>Agentic AI Platform with MCP</h4>
-          <p>Production agentic workflow system built on Amazon Bedrock using Model Context Protocol (MCP). Enables autonomous AI agents to query data warehouses, generate reports, and trigger actions.</p>
-          <div class="psc-stack"><span>Amazon Bedrock</span><span>MCP</span><span>AWS Lambda</span><span>Python</span></div>
-        </div>
-
-        <div class="proj-sm-card">
-          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-zap"/></svg></div>
-          <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
-          <div class="psc-tag">Databricks · MLOps</div>
-          <h4>MLOps Pipeline on Databricks</h4>
-          <p>End-to-end MLOps framework on Databricks with MLflow experiment tracking, automated model retraining, Delta Lake feature store, and CI/CD deployment pipelines.</p>
-          <div class="psc-stack"><span>Databricks</span><span>MLflow</span><span>Delta Lake</span><span>PySpark</span></div>
-        </div>
-
-        <div class="proj-sm-card">
-          <div class="psc-icon"><svg class="ico ico-lg"><use href="#i-snow"/></svg></div>
-          <div class="psc-links"><a href="https://github.com/geodelab" target="_blank">↗</a></div>
-          <div class="psc-tag">Snowflake · Analytics</div>
-          <h4>Snowflake Analytics Hub</h4>
-          <p>Modern analytics platform with Snowflake data sharing, automated cost governance, and self-service analytics layer — reducing infrastructure spend significantly.</p>
-          <div class="psc-stack"><span>Snowflake</span><span>dbt</span><span>Python</span><span>SQL</span></div>
-        </div>
-
-
+      <div class="cert reveal" data-vendor="snowflake">
+        <span class="cert-logo sf-logo">❄</span>
+        <span class="cert-level">Core</span>
+        <h3>SnowPro Core Certification</h3>
+        <p>Virtual warehouses, Snowpark, Time Travel and data warehousing.</p>
+        <span class="cert-foot"><span>Jul 2022</span></span>
+      </div>
+      <div class="cert reveal" data-vendor="snowflake">
+        <span class="cert-logo sf-logo">❄</span>
+        <span class="cert-level">Accreditation</span>
+        <h3>Technical Sales Professional</h3>
+        <p>Technical architecture, pre-sales and solution design.</p>
+        <span class="cert-foot"><span>Jul 2022</span></span>
+      </div>
+      <div class="cert reveal" data-vendor="snowflake">
+        <span class="cert-logo sf-logo">❄</span>
+        <span class="cert-level">Accreditation</span>
+        <h3>Sales Professional</h3>
+        <p>Snowflake platform and business value.</p>
+        <span class="cert-foot"><span>Aug 2023</span></span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ SPEAKING ═══ -->
-<section id="speaking">
+<section class="section section-alt" id="speaking">
   <div class="container">
-    <div class="sec-label"><span class="c-cyan">06.</span> Speaking &amp; Community</div>
-    <h2 class="sec-title">Sharing <span class="grad-text">Knowledge</span></h2>
-    <div class="speaking-grid">
-      <div class="speak-card speak-featured">
-        <div class="speak-icon"><svg class="ico ico-xl"><use href="#i-mic"/></svg></div>
-        <div class="speak-type">Technical Talk</div>
-        <h3>Generative AI on AWS — Bedrock, Agents &amp; MCP</h3>
-        <p>Deep dive into architecting production-grade GenAI solutions on AWS — covering Amazon Bedrock, agentic workflows with Model Context Protocol, and real-world enterprise deployment patterns.</p>
-        <div class="speak-tags"><span>Amazon Bedrock</span><span>Agentic AI</span><span>MCP</span><span>AWS</span></div>
-      </div>
-      <div class="speak-card">
-        <div class="speak-icon"><svg class="ico ico-xl"><use href="#i-layers"/></svg></div>
-        <div class="speak-type">Workshop</div>
-        <h3>Medallion Architecture with Databricks</h3>
-        <p>Hands-on workshop on implementing Bronze/Silver/Gold Medallion architecture with Databricks Delta Lake — covering data quality, governance, and performance optimisation.</p>
-        <div class="speak-tags"><span>Databricks</span><span>Delta Lake</span><span>Medallion</span><span>PySpark</span></div>
-      </div>
-      <div class="speak-card">
-        <div class="speak-icon"><svg class="ico ico-xl"><use href="#i-cloud"/></svg></div>
-        <div class="speak-type">Community Talk</div>
-        <h3>AWS Data Platform Design Patterns</h3>
-        <p>Architecture discussion on cost-optimised, scalable data platforms on AWS — covering common anti-patterns across Glue, Redshift, Lake Formation and proven enterprise design approaches.</p>
-        <div class="speak-tags"><span>AWS Glue</span><span>Redshift</span><span>Lake Formation</span><span>Architecture</span></div>
-      </div>
+    <div class="section-head reveal">
+      <p class="kicker">06 · Speaking &amp; community</p>
+      <h2>Talks &amp; <em>workshops</em></h2>
+      <p class="lede">Open to speaking at AWS community days, user groups, meetups and conferences, in person or remote.</p>
     </div>
-  </div>
-</section>
-
-<!-- ═══ EDUCATION ═══ -->
-<section id="education">
-  <div class="container">
-    <div class="sec-label"><span class="c-cyan">07.</span> Education</div>
-    <h2 class="sec-title">Academic <span class="grad-text">Foundation</span></h2>
-    <div class="edu-card">
-      <div class="edu-icon"><svg class="ico ico-xl"><use href="#i-cap"/></svg></div>
-      <div class="edu-body">
-        <div class="edu-degree">Bachelor of Engineering — Computer Science</div>
-        <div class="edu-school">DMI College of Engineering</div>
-        <div class="edu-year">2018 – 2022 · Chennai, Tamil Nadu, India</div>
-        <p class="edu-desc">Strong foundation in computer science fundamentals — algorithms, data structures, databases, and software engineering. Developed early interest in data systems and cloud computing that led to a career in data engineering and architecture.</p>
-      </div>
+    <div class="talks">
+      <article class="talk reveal">
+        <span class="talk-type"><svg class="ic"><use href="#i-mic"/></svg>Technical talk</span>
+        <h3>Generative AI on AWS: Bedrock, agents &amp; MCP</h3>
+        <p>Architecting production GenAI on AWS: Amazon Bedrock, agent workflows with the Model Context Protocol and enterprise deployment patterns.</p>
+      </article>
+      <article class="talk reveal">
+        <span class="talk-type"><svg class="ic"><use href="#i-mic"/></svg>Workshop</span>
+        <h3>Medallion architecture with Databricks</h3>
+        <p>Hands-on bronze, silver and gold design with Delta Lake, covering data quality, governance and performance tuning.</p>
+      </article>
+      <article class="talk reveal">
+        <span class="talk-type"><svg class="ic"><use href="#i-mic"/></svg>Community talk</span>
+        <h3>AWS data platform design patterns</h3>
+        <p>Cost-aware, scalable data platforms on AWS, and the anti-patterns that show up across Glue, Redshift and Lake Formation.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ═══ CONTACT ═══ -->
-<section id="contact">
+<section class="section contact" id="contact">
   <div class="container">
-    <div class="contact-inner">
-      <div class="sec-label"><span class="c-cyan">08.</span> Contact</div>
-      <h2 class="sec-title">Let's Build <span class="grad-text">Something Together</span></h2>
-      <p class="contact-lead">Whether you're looking for a Solutions Architect, want to discuss data platform strategy, or geek out about GenAI on AWS — I'm always open to a great conversation.</p>
-      <div class="contact-cards">
-        <a href="mailto:ganesh.data.expert@gmail.com" class="ccard">
-          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-mail"/></svg></div>
-          <div><div class="ccard-lbl">Email</div><div class="ccard-val">ganesh.data.expert@gmail.com</div></div>
-        </a>
-        <a href="https://www.linkedin.com/in/ganesh-kumar-ponraj/" target="_blank" class="ccard">
-          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-linkedin"/></svg></div>
-          <div><div class="ccard-lbl">LinkedIn</div><div class="ccard-val">ganeshkumar-ponraj</div></div>
-        </a>
-        <a href="https://github.com/geodelab" target="_blank" class="ccard">
-          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-github"/></svg></div>
-          <div><div class="ccard-lbl">GitHub</div><div class="ccard-val">github.com/geodelab</div></div>
-        </a>
-        <a href="tel:+917358182958" class="ccard">
-          <div class="ccard-icon"><svg class="ico ico-lg"><use href="#i-phone"/></svg></div>
-          <div><div class="ccard-lbl">Phone</div><div class="ccard-val">+91 73581 82958</div></div>
-        </a>
+    <div class="contact-card reveal">
+      <p class="kicker">07 · Contact</p>
+      <h2>Have a data or AI platform to <em>build on AWS?</em></h2>
+      <p class="lede">I'm open to architecture consulting, speaking invitations and conversations about data and GenAI on AWS. I usually reply within two working days.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary btn-lg" href="mailto:ganesh.data.expert@gmail.com"><svg class="ic"><use href="#i-mail"/></svg> ganesh.data.expert@gmail.com</a>
+        <button class="btn btn-ghost btn-lg copy-email" data-email="ganesh.data.expert@gmail.com">Copy email</button>
       </div>
-      <a href="mailto:ganesh.data.expert@gmail.com" class="btn-glow btn-xl">Say Hello</a>
+      <ul class="contact-list">
+        <li><a href="https://www.linkedin.com/in/ganesh-kumar-ponraj/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg>linkedin.com/in/ganesh-kumar-ponraj</a></li>
+        <li><a href="https://github.com/geodelab" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>github.com/geodelab</a></li>
+        <li><a href="tel:+917358182958"><svg class="ic"><use href="#i-phone"/></svg>+91 73581 82958</a></li>
+        <li><span><svg class="ic"><use href="#i-pin"/></svg>Chennai, India · IST (UTC+5:30)</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-brand">GANESH<span class="c-cyan"> KUMAR P</span></div>
-    <p>Designed &amp; Built by <span class="c-cyan">Ganesh Kumar P</span> · 2025</p>
-    <p class="footer-note">Solutions Architect · AWS · Databricks · Snowflake · GenAI · Chennai, India</p>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year">2026</span> Ganesh Kumar P · Solutions Architect, Data &amp; AI on AWS</p>
+    <p class="muted">AWS, Databricks and Snowflake names and logos belong to their owners.</p>
   </div>
 </footer>
 
-<script type="importmap">
-{ "imports": { "three": "./js/vendor/three.module.js" } }
-</script>
-<script type="module" src="js/heroReveal.js"></script>
-<script src="js/vendor/gsap.min.js"></script>
-<script src="js/vendor/ScrollTrigger.min.js"></script>
-<script src="js/vendor/lenis.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/scroll.js"></script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js" defer></script>
 </body>
 </html>

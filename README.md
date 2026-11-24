@@ -31,20 +31,19 @@ Whether you're a potential employer, a client evaluating an architect, or a fell
 ---
 
 ## Tech Stack of This Site
-
-Built with pure HTML, CSS, and JavaScript — no frameworks, no dependencies. Deployed on GitHub Pages.
-
+Plain HTML, CSS and JavaScript with no build step and no runtime dependencies. Deployed on GitHub Pages from `main`.
 ```
-portfolio/
-├── index.html      ← All content
-├── css/
-│   └── style.css   ← Styling & animations
-└── js/
-    └── main.js     ← Interactions & effects
+├── index.html          ← all content, SEO meta, Open Graph, JSON-LD (schema.org Person)
+├── css/style.css       ← theme and layout
+├── js/main.js          ← nav, scroll reveals, counters, certification filter
+├── assets/
+│   ├── portrait.webp   ← hero photo (optimized from portrait.png)
+│   ├── og-image.png    ← 1200×630 social share card
+│   └── favicon.svg
+├── robots.txt, sitemap.xml, 404.html
 ```
-
+To preview locally: `python3 -m http.server` and open http://localhost:8000.
 ---
-
 ## Contact
 
 - **Email:** ganesh.data.expert@gmail.com
