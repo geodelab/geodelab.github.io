@@ -51,6 +51,6 @@ To preview locally: `python3 -m http.server` and open http://localhost:8000.
 
 ## Contact
 
-- **Email:** ganesh.data.expert@gmail.com
+- **Message:** use the contact form at [geodelab.github.io/#contact](https://geodelab.github.io/#contact)
 - **LinkedIn:** [linkedin.com/in/ganeshkumar-ponraj](https://www.linkedin.com/in/ganesh-kumar-ponraj/)
 - **GitHub:** [github.com/geodelab](https://github.com/geodelab)

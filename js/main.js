@@ -84,17 +84,58 @@
   };
   fBtns.forEach((b) => b.addEventListener('click', () => filterCerts(b.dataset.filter)));
 
-  /* ---- copy email ---- */
-  const cStatus = $('#copy-status');
-  $$('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(b.dataset.copy);
-      b.textContent = 'Copied ✓'; b.classList.add('is-done');
-      if (cStatus) cStatus.textContent = 'Email address copied';
-      setTimeout(() => { b.textContent = 'Copy'; b.classList.remove('is-done'); }, 2000);
-    } catch { location.href = 'mailto:' + b.dataset.copy; }
-  }));
-
+  /* ---- contact form (Web3Forms; no email or phone on the page) ---- */
+  const cf = $('#contact-form');
+  const cfStatus = $('#cf-status');
+  const setStatus = (msg, kind) => { if (cfStatus) { cfStatus.textContent = msg; cfStatus.dataset.kind = kind || ''; } };
+  const openForm = (topic) => {
+    if (!cf) return;
+    if (topic) { const r = $(`input[name="topic"][value="${topic}"]`, cf); if (r) r.checked = true; }
+    $('#contact').scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(() => $('#cf-name').focus({ preventScroll: true }), rm ? 0 : 450);
+  };
+  if (location.hash === '#contact-sent') setStatus('[ok] Message sent. I will reply to the email you gave.', 'ok');
+  if (cf) {
+    const key = cf.elements.access_key.value;
+    const configured = key && !key.startsWith('YOUR_');
+    cf.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (cf.elements.botcheck.checked) return;
+      const bad = [...cf.querySelectorAll('input[required], textarea[required]')].find((f) => !f.checkValidity());
+      if (bad) {
+        const label = cf.querySelector(`label[for="${bad.id}"]`);
+        setStatus(`[err] Check "${label ? label.firstChild.textContent.trim() : bad.name}".`, 'err');
+        bad.focus();
+        return;
+      }
+      if (!configured) { setStatus('[err] The form is not connected yet. Please reach me on LinkedIn for now.', 'err'); return; }
+      const btn = cf.querySelector('.tx-form__send');
+      const data = Object.fromEntries(new FormData(cf));
+      delete data.redirect;
+      data.subject = `[${data.topic}] ${data.name} via geodelab.github.io`;
+      btn.disabled = true;
+      setStatus('[..] Transmitting…', 'busy');
+      try {
+        const body = new FormData(); Object.entries(data).forEach(([k, v]) => body.append(k, v));
+        const res = await fetch(cf.action, { method: 'POST', headers: { Accept: 'application/json' }, body });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || json.success === false) throw new Error(json.message || res.status);
+        cf.reset();
+        setStatus('[ok] Message sent. I will reply to the email you gave.', 'ok');
+      } catch (err) {
+        if (err instanceof TypeError) {
+          // Network or CORS failure: nothing was sent, so fall back to a plain form post (redirects back here).
+          cf.elements.subject.value = data.subject;
+          HTMLFormElement.prototype.submit.call(cf);
+          return;
+        }
+        setStatus('[err] Could not send right now. Please try again, or reach me on LinkedIn.', 'err');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+  $$('[data-talk]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); openForm(); }));
   /* ---- console ---- */
   const log = $('#console-log');
   const form = $('#console-form');
@@ -114,7 +155,7 @@
   };
   const go = (id) => (focusSection(id) ? `→ ${id === 'top' ? 'EP.00' : 'EP.' + String(EP.indexOf(id)).padStart(2, '0')} #${id}` : '');
 
-  const CONTACT = 'email     ganesh.data.expert@gmail.com\nphone     +91 73581 82958\nlinkedin  linkedin.com/in/ganesh-kumar-ponraj\ngithub    github.com/geodelab\ntz        IST, UTC+5:30';
+  const CONTACT = 'message   use the form in EP.10 (goto contact). it comes straight to me.\nlinkedin  linkedin.com/in/ganesh-kumar-ponraj\ngithub    github.com/geodelab\nbuilder   builder.aws.com/community/@ganeshkumarp\ntz        IST, UTC+5:30'
   const COMMANDS = {
     help: () => 'whoami  clouds  compare <svc>  projects  gauntlet  community\ncerts  talks  contact  goto <section>  clear\n\ngoto: start practice map work oss writing community talks career certs contact, or 0-10',
     whoami: () => 'Ganesh Kumar P. Data Architect at Aivar Innovations, Bangalore.\nMulti-cloud data and AI on AWS, Azure and Google Cloud.\n5+ years: lakehouses, streaming, migrations, greenfield builds, GenAI.',
@@ -128,7 +169,7 @@
     contact: () => CONTACT,
     goto: (s) => { const id = (Object.hasOwn(SECTIONS, s) && SECTIONS[s]) || (/^\d+$/.test(s) && EP[+s]); return id ? go(id) : 'usage: goto <section|ep>   e.g. goto talks, goto 4'; },
     clear: () => { log.replaceChildren(); return ''; },
-    sudo: (a) => (a === 'hire ganesh' ? '[sudo] access granted.\n' + CONTACT : 'sudo: permission denied'),
+    sudo: (a) => (a === 'hire ganesh' ? (openForm('Architecture role'), '[sudo] access granted. opening a channel…\n' + CONTACT) : 'sudo: permission denied'),
   };
   const NAMES = Object.keys(COMMANDS).filter((k) => k !== 'sudo');
 
