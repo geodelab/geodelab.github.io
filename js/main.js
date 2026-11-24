@@ -101,10 +101,16 @@
     cf.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (cf.elements.botcheck.checked) return;
-      const bad = [...cf.querySelectorAll('input[required], textarea[required]')].find((f) => !f.checkValidity());
+      const fields = [...cf.querySelectorAll('input[required], textarea[required]')];
+      fields.forEach((f) => { f.value = f.value.trim(); });
+      const bad = fields.find((f) => !f.checkValidity());
       if (bad) {
         const label = cf.querySelector(`label[for="${bad.id}"]`);
-        setStatus(`[err] Check "${label ? label.firstChild.textContent.trim() : bad.name}".`, 'err');
+        const name = label ? label.firstChild.textContent.trim() : bad.name;
+        const why = bad.validity.valueMissing ? `${name} is required.` : bad.validity.typeMismatch ? 'Enter a valid email address, like name@company.com.' : `Check ${name}.`;
+        setStatus(`[err] ${why}`, 'err');
+        bad.setAttribute('aria-invalid', 'true');
+        bad.addEventListener('input', () => bad.removeAttribute('aria-invalid'), { once: true });
         bad.focus();
         return;
       }
